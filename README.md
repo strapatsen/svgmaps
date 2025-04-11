@@ -2,7 +2,7 @@
 
 **An SVG-based terrain editor for creating and editing 2D maps with customizable terrain features.**  
 
-----
+![SVG Maps Preview](screenshot_app.png)
 
 ## Features  
 - 🖌️ **SVG-based terrain editing** – Draw and modify terrain with vector precision  
