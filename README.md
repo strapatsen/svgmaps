@@ -16,7 +16,7 @@
 ## Quick Start  
 1. **Clone the repository**  
    ```sh
-   git clone https://github.com/yourusername/svg-maps.git
+   git clone https://github.com/strapatsen/svg-maps.git
    cd svg-maps
    ```
 
