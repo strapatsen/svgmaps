@@ -1,4 +1,4 @@
-# SVG Maps - Terrain Editor  
+# SVG Maps - WebApp
 
 **An SVG-based terrain editor for creating and editing 2D maps with customizable terrain features.**  
 
