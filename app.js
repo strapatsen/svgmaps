@@ -872,7 +872,7 @@ class TerrainEditor {
         const element = new TerrainElement(elementData);
         const layer = this.layers.find(l => l.id === elementData.layerId);
         if (layer) {
-            layer.elements.push(element);
+            layer.addElement(element);
             this.saveState();
             return element;
         }
@@ -3417,55 +3417,57 @@ class TerrainEditor {
 	}
 }
 class Layer {
-	constructor(id, name, options = {}) {
-		this.id = id;
-		this.name = name;
-		this.visible = options.visible !== undefined ? options.visible : true;
-		this.locked = options.locked || false;
-		this.elements = [];
-		this.zIndex = options.zIndex || 0;
-	}
-	addElement(element) {
-		if (!this.isValidElement(element)) {
-			console.error("Invalid element:", element);
-			return false;
-		}
-		this.elements.push(element);
-		element.layerId = this.id;
-	}
-	isValidElement(element) {
-		return (
-			element &&
-			typeof element === "object" &&
-			element.shape &&
-			typeof element.x === "number" &&
-			typeof element.y === "number"
-		);
-	}
-	removeElement(elementId) {
-		this.elements = this.elements.filter((el) => el.id !== elementId);
-	}
-	toJSON() {
-		return {
-			id: this.id,
-			name: this.name,
-			visible: this.visible,
-			locked: this.locked,
-			zIndex: this.zIndex,
-			elements: this.elements.map((el) => el.toJSON())
-		};
-	}
-	static fromJSON(json) {
-		const layer = new Layer(json.id, json.name, {
-			visible: json.visible,
-			locked: json.locked,
-			zIndex: json.zIndex
-		});
-		json.elements.forEach((el) => {
-			layer.addElement(TerrainElement.fromJSON(el));
-		});
-		return layer;
-	}
+    constructor(id, name, options = {}) {
+        this.id = id;
+        this.name = name;
+        this.visible = options.visible !== undefined ? options.visible : true;
+        this.locked = options.locked || false;
+        this.elements = [];
+    }
+
+    addElement(element) {
+        if (!this.isValidElement(element)) {
+            console.error("Invalid element:", element);
+            return false;
+        }
+        this.elements.push(element);
+        element.layerId = this.id;
+    }
+
+    isValidElement(element) {
+        return (
+            element &&
+            typeof element === "object" &&
+            element.shape &&
+            typeof element.x === "number" &&
+            typeof element.y === "number"
+        );
+    }
+
+    removeElement(elementId) {
+        this.elements = this.elements.filter((el) => el.id !== elementId);
+    }
+
+    toJSON() {
+        return {
+            id: this.id,
+            name: this.name,
+            visible: this.visible,
+            locked: this.locked,
+            elements: this.elements.map((el) => el.toJSON()),
+        };
+    }
+
+    static fromJSON(json) {
+        const layer = new Layer(json.id, json.name, {
+            visible: json.visible,
+            locked: json.locked,
+        });
+        json.elements.forEach((el) => {
+            layer.addElement(TerrainElement.fromJSON(el));
+        });
+        return layer;
+    }
 }
 class TerrainElement {
 	constructor(options = {}) {
