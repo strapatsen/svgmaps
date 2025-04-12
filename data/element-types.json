@@ -1,0 +1,2710 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2023-07-20",
+  "elementTypes": [
+    {
+      "group": "🎭 Food & Beverage",
+      "category": "commercial",
+      "types": [
+        {
+          "value": "bar",
+          "label": "🍻 Bar",
+          "icon": "🍻",
+          "defaultWidth": 80,
+          "defaultHeight": 40,
+          "properties": {
+            "powerRequirement": "2kW",
+            "staffRequired": 2,
+            "allowedAreas": ["public", "vip"],
+            "renderer": "rectangle",
+            "zIndex": 10
+          }
+        },
+        {
+          "value": "cocktail-bar",
+          "label": "🍸 Cocktail Bar",
+          "icon": "🍸",
+          "defaultWidth": 60,
+          "defaultHeight": 40,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public", "vip"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "specialty-beer-bar",
+          "label": "🍺 Specialty Beer Bar",
+          "icon": "🍺",
+          "defaultWidth": 80,
+          "defaultHeight": 40,
+          "properties": {
+            "powerRequirement": "1.5kW",
+            "staffRequired": 2,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "wine-bar",
+          "label": "🍷 Wine Bar",
+          "icon": "🍷",
+          "defaultWidth": 70,
+          "defaultHeight": 40,
+          "properties": {
+            "powerRequirement": "0.5kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public", "vip"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "coffee-stand",
+          "label": "☕ Coffee Stand",
+          "icon": "☕",
+          "defaultWidth": 50,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "3kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "tea-house",
+          "label": "🍵 Tea House",
+          "icon": "🍵",
+          "defaultWidth": 60,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "smoothie-stand",
+          "label": "🥤 Smoothie Stand",
+          "icon": "🥤",
+          "defaultWidth": 50,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "2kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "food-truck",
+          "label": "🚚 Food Truck",
+          "icon": "🚚",
+          "defaultWidth": 100,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "5kW",
+            "staffRequired": 2,
+            "allowedAreas": ["service"],
+            "renderer": "customTruck",
+            "movable": true
+          }
+        },
+        {
+          "value": "bbq-station",
+          "label": "🔥 BBQ Station",
+          "icon": "🔥",
+          "defaultWidth": 80,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 2,
+            "allowedAreas": ["service"],
+            "renderer": "rectangle",
+            "requiresVentilation": true
+          }
+        },
+        {
+          "value": "pizza-stand",
+          "label": "🍕 Pizza Stand",
+          "icon": "🍕",
+          "defaultWidth": 60,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "3kW",
+            "staffRequired": 2,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "vegan-food-stand",
+          "label": "🥗 Vegan Food Stand",
+          "icon": "🥗",
+          "defaultWidth": 60,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "grill-stand",
+          "label": "🥩 Grill Stand",
+          "icon": "🥩",
+          "defaultWidth": 70,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "4kW",
+            "staffRequired": 2,
+            "allowedAreas": ["service"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "sushi-bar",
+          "label": "🍣 Sushi Bar",
+          "icon": "🍣",
+          "defaultWidth": 80,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "2kW",
+            "staffRequired": 2,
+            "allowedAreas": ["public", "vip"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "snack-stand",
+          "label": "🍟 Snack Stand",
+          "icon": "🍟",
+          "defaultWidth": 50,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "3kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "ice-cream-stand",
+          "label": "🍦 Ice Cream Stand",
+          "icon": "🍦",
+          "defaultWidth": 50,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "2kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "pancake-stand",
+          "label": "🥞 Pancake Stand",
+          "icon": "🥞",
+          "defaultWidth": 60,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "3kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "candy-stand",
+          "label": "🍬 Candy Stand",
+          "icon": "🍬",
+          "defaultWidth": 50,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "0.5kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "popcorn-stand",
+          "label": "🍿 Popcorn Stand",
+          "icon": "🍿",
+          "defaultWidth": 50,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "frozen-yogurt-stand",
+          "label": "🍧 Frozen Yogurt Stand",
+          "icon": "🍧",
+          "defaultWidth": 50,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "2kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "food-court",
+          "label": "🍽️ Food Court",
+          "icon": "🍽️",
+          "defaultWidth": 300,
+          "defaultHeight": 200,
+          "properties": {
+            "powerRequirement": "10kW",
+            "staffRequired": 3,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "water-station",
+          "label": "🚰 Water Station",
+          "icon": "🚰",
+          "defaultWidth": 50,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "juice-stand",
+          "label": "🍹 Juice Stand",
+          "icon": "🍹",
+          "defaultWidth": 50,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "hot-dog-stand",
+          "label": "🌭 Hot Dog Stand",
+          "icon": "🌭",
+          "defaultWidth": 50,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "food-cart",
+          "label": "🍔 Food Cart",
+          "icon": "🍔",
+          "defaultWidth": 40,
+          "defaultHeight": 40,
+          "properties": {
+            "powerRequirement": "0.5kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle",
+            "movable": true
+          }
+        },
+        {
+          "value": "dessert-stand",
+          "label": "🍰 Dessert Stand",
+          "icon": "🍰",
+          "defaultWidth": 50,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "food-waste-bin",
+          "label": "🗑️ Food Waste Bin",
+          "icon": "🗑️",
+          "defaultWidth": 30,
+          "defaultHeight": 40,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        }
+      ]
+    },
+    {
+      "group": "🚮 Sanitation & Waste Management",
+      "category": "infrastructure",
+      "types": [
+        {
+          "value": "toilet",
+          "label": "🚻 Toilet",
+          "icon": "🚻",
+          "defaultWidth": 60,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "0.5kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public", "vip", "staff"],
+            "renderer": "rectangle",
+            "gender": "unisex"
+          }
+        },
+        {
+          "value": "portable-toilet",
+          "label": "🚾 Portable Toilet",
+          "icon": "🚾",
+          "defaultWidth": 50,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public", "service"],
+            "renderer": "rectangle",
+            "gender": "unisex",
+            "movable": true
+          }
+        },
+        {
+          "value": "vip-toilet",
+          "label": "💎 VIP Toilet",
+          "icon": "💎",
+          "defaultWidth": 70,
+          "defaultHeight": 90,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["vip"],
+            "renderer": "rectangle",
+            "gender": "unisex"
+          }
+        },
+        {
+          "value": "urinal-station",
+          "label": "🚹 Urinal Station",
+          "icon": "🚹",
+          "defaultWidth": 40,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public", "staff"],
+            "renderer": "rectangle",
+            "gender": "male"
+          }
+        },
+        {
+          "value": "shower",
+          "label": "🚿 Shower",
+          "icon": "🚿",
+          "defaultWidth": 80,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "3kW",
+            "staffRequired": 0,
+            "allowedAreas": ["staff", "vip"],
+            "renderer": "rectangle",
+            "waterRequirement": "10L/min"
+          }
+        },
+        {
+          "value": "water-refill-station",
+          "label": "💧 Water Refill Station",
+          "icon": "💧",
+          "defaultWidth": 60,
+          "defaultHeight": 40,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "garbage-bin",
+          "label": "🗑️ Garbage Bin",
+          "icon": "🗑️",
+          "defaultWidth": 30,
+          "defaultHeight": 40,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public", "service", "staff"],
+            "renderer": "rectangle",
+            "capacity": "50L"
+          }
+        },
+        {
+          "value": "recycling-station",
+          "label": "♻️ Recycling Station",
+          "icon": "♻️",
+          "defaultWidth": 100,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public", "service"],
+            "renderer": "rectangle",
+            "wasteTypes": ["plastic", "paper", "glass"]
+          }
+        },
+        {
+          "value": "compost-bin",
+          "label": "🍃 Compost Bin",
+          "icon": "🍃",
+          "defaultWidth": 50,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["service"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "glass-recycling",
+          "label": "🟫 Glass Recycling",
+          "icon": "🟫",
+          "defaultWidth": 40,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public", "service"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "plastic-recycling",
+          "label": "🔵 Plastic Recycling",
+          "icon": "🔵",
+          "defaultWidth": 40,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public", "service"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "paper-recycling",
+          "label": "📄 Paper Recycling",
+          "icon": "📄",
+          "defaultWidth": 40,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public", "service"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "residual-waste-bin",
+          "label": "⚫ Residual Waste Bin",
+          "icon": "⚫",
+          "defaultWidth": 40,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public", "service"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "hazardous-waste-bin",
+          "label": "⚠️ Hazardous Waste Bin",
+          "icon": "⚠️",
+          "defaultWidth": 40,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["service"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "waste-collection-point",
+          "label": "🚛 Waste Collection Point",
+          "icon": "🚛",
+          "defaultWidth": 100,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 1,
+            "allowedAreas": ["service"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "waste-disposal-truck",
+          "label": "🚚 Waste Disposal Truck",
+          "icon": "🚚",
+          "defaultWidth": 100,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 1,
+            "allowedAreas": ["service"],
+            "renderer": "customTruck",
+            "movable": true
+          }
+        },
+        {
+          "value": "waste-disposal-area",
+          "label": "🗑️ Waste Disposal Area",
+          "icon": "🗑️",
+          "defaultWidth": 200,
+          "defaultHeight": 100,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 1,
+            "allowedAreas": ["service"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "waste-segregation-area",
+          "label": "♻️ Waste Segregation Area",
+          "icon": "♻️",
+          "defaultWidth": 200,
+          "defaultHeight": 100,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 1,
+            "allowedAreas": ["service"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "waste-collection-bin",
+          "label": "🗑️ Waste Collection Bin",
+          "icon": "🗑️",
+          "defaultWidth": 30,
+          "defaultHeight": 40,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        }
+      ]
+    },
+    {
+      "group": "🔌 Infrastructure & Utilities",
+      "category": "infrastructure",
+      "types": [
+        {
+          "value": "power-generator",
+          "label": "⚡ Power Generator",
+          "icon": "⚡",
+          "defaultWidth": 100,
+          "defaultHeight": 80,
+          "properties": {
+            "powerOutput": "50kW",
+            "staffRequired": 1,
+            "allowedAreas": ["service"],
+            "renderer": "rectangle",
+            "noiseLevel": "high"
+          }
+        },
+        {
+          "value": "power-line",
+          "label": "🔋 Power Line",
+          "icon": "🔋",
+          "defaultWidth": 10,
+          "defaultHeight": 200,
+          "properties": {
+            "powerCapacity": "20kW",
+            "staffRequired": 0,
+            "allowedAreas": ["service", "backstage"],
+            "renderer": "line",
+            "voltage": "230V"
+          }
+        },
+        {
+          "value": "power-outlet",
+          "label": "🔌 Power Outlet",
+          "icon": "🔌",
+          "defaultWidth": 20,
+          "defaultHeight": 20,
+          "properties": {
+            "powerCapacity": "3kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public", "vip", "staff", "backstage"],
+            "renderer": "circle",
+            "voltage": "230V"
+          }
+        },
+        {
+          "value": "lighting",
+          "label": "💡 Lighting",
+          "icon": "💡",
+          "defaultWidth": 20,
+          "defaultHeight": 20,
+          "properties": {
+            "powerRequirement": "0.5kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public", "vip", "staff", "backstage"],
+            "renderer": "circle",
+            "lightType": "LED"
+          }
+        },
+        {
+          "value": "stage-lighting",
+          "label": "🎆 Stage Lighting",
+          "icon": "🎆",
+          "defaultWidth": 30,
+          "defaultHeight": 30,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["stage"],
+            "renderer": "circle",
+            "lightType": "moving-head"
+          }
+        },
+        {
+          "value": "water-pipeline",
+          "label": "🚰 Water Pipeline",
+          "icon": "🚰",
+          "defaultWidth": 10,
+          "defaultHeight": 200,
+          "properties": {
+            "waterFlow": "20L/min",
+            "staffRequired": 0,
+            "allowedAreas": ["service", "backstage"],
+            "renderer": "line"
+          }
+        },
+        {
+          "value": "wifi-hotspot",
+          "label": "📶 WiFi Hotspot",
+          "icon": "📶",
+          "defaultWidth": 30,
+          "defaultHeight": 30,
+          "properties": {
+            "powerRequirement": "0.1kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public", "vip", "staff"],
+            "renderer": "circle",
+            "coverageRadius": "50m"
+          }
+        },
+        {
+          "value": "security-camera",
+          "label": "📹 Security Camera",
+          "icon": "📹",
+          "defaultWidth": 20,
+          "defaultHeight": 20,
+          "properties": {
+            "powerRequirement": "0.05kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public", "service", "staff"],
+            "renderer": "circle",
+            "viewAngle": "90°"
+          }
+        },
+        {
+          "value": "first-aid-station",
+          "label": "⛑️ First Aid Station",
+          "icon": "⛑️",
+          "defaultWidth": 80,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "0.5kW",
+            "staffRequired": 2,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle",
+            "medicalLevel": "basic"
+          }
+        },
+        {
+          "value": "medical-tent",
+          "label": "🏥 Medical Tent",
+          "icon": "🏥",
+          "defaultWidth": 100,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 3,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle",
+            "medicalLevel": "advanced"
+          }
+        },
+        {
+          "value": "emergency-exit",
+          "label": "🚪 Emergency Exit",
+          "icon": "🚪",
+          "defaultWidth": 60,
+          "defaultHeight": 100,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public", "service"],
+            "renderer": "rectangle",
+            "securityLevel": "high"
+          }
+        },
+        {
+          "value": "parking-area",
+          "label": "🅿️ Parking Area",
+          "icon": "🅿️",
+          "defaultWidth": 300,
+          "defaultHeight": 200,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 1,
+            "allowedAreas": ["service"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "road-access",
+          "label": "🛣️ Road Access",
+          "icon": "",
+          "defaultWidth": 10,
+          "defaultHeight": 200,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public", "service"],
+            "renderer": "line"
+          }
+        },
+        {
+          "value": "fence",
+          "label": "🚧 Fence",
+          "icon": "🚧",
+          "defaultWidth": 10,
+          "defaultHeight": 200,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public", "service"],
+            "renderer": "line",
+            "securityLevel": "medium"
+          }
+        },
+        {
+          "value": "signage",
+          "label": "🪧 Signage",
+          "icon": "",
+          "defaultWidth": 20,
+          "defaultHeight": 40,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "lighting-tower",
+          "label": "🌟 Lighting Tower",
+          "icon": "",
+          "defaultWidth": 30,
+          "defaultHeight": 30,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "water-tank",
+          "label": "💧 Water Tank",
+          "icon": "",
+          "defaultWidth": 100,
+          "defaultHeight": 80,
+          "properties": {
+            "waterCapacity": 1000,
+            "staffRequired": 1,
+            "allowedAreas": ["service"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "wifi-router",
+          "label": "📡 WiFi Router",
+          "icon": "",
+          "defaultWidth": 20,
+          "defaultHeight": 20,
+          "properties": {
+            "powerRequirement": "0.1kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": "circle",
+            "coverageRadius": "30m"
+          }
+        },
+        {
+          "value": "security-checkpoint",
+          "label": "🔒 Security Checkpoint",
+          "icon": "",
+          "defaultWidth": 100,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 2,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        }
+      ]
+    },
+    {
+      "group": "🎪 Entertainment & Facilities",
+      "category": "entertainment",
+      "types": [
+        {
+          "value": "main-stage",
+          "label": "🎤 Main Stage",
+          "icon": "🎤",
+          "defaultWidth": 300,
+          "defaultHeight": 150,
+          "properties": {
+            "powerRequirement": "50kW",
+            "staffRequired": 5,
+            "allowedAreas": ["stage"],
+            "renderer": "rectangle",
+            "roofOptions": ["none", "partial", "full"]
+          }
+        },
+        {
+          "value": "secondary-stage",
+          "label": "🎸 Secondary Stage",
+          "icon": "🎸",
+          "defaultWidth": 200,
+          "defaultHeight": 100,
+          "properties": {
+            "powerRequirement": "30kW",
+            "staffRequired": 3,
+            "allowedAreas": ["stage"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "dj-booth",
+          "label": "🎧 DJ Booth",
+          "icon": "🎧",
+          "defaultWidth": 100,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "10kW",
+            "staffRequired": 1,
+            "allowedAreas": ["stage", "vip"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "open-air-theater",
+          "label": "🎭 Open-Air Theater",
+          "icon": "🎭",
+          "defaultWidth": 250,
+          "defaultHeight": 200,
+          "properties": {
+            "powerRequirement": "20kW",
+            "staffRequired": 3,
+            "allowedAreas": ["stage"],
+            "renderer": "rectangle",
+            "seatingCapacity": 500
+          }
+        },
+        {
+          "value": "cinema-screen",
+          "label": "🎥 Cinema Screen",
+          "icon": "🎥",
+          "defaultWidth": 150,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "5kW",
+            "staffRequired": 2,
+            "allowedAreas": ["stage"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "artist-lounge",
+          "label": "🛋️ Artist Lounge",
+          "icon": "🛋️",
+          "defaultWidth": 120,
+          "defaultHeight": 100,
+          "properties": {
+            "powerRequirement": "5kW",
+            "staffRequired": 1,
+            "allowedAreas": ["backstage"],
+            "renderer": "rectangle",
+            "capacity": 20
+          }
+        },
+        {
+          "value": "press-area",
+          "label": "📷 Press Area",
+          "icon": "📷",
+          "defaultWidth": 100,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "3kW",
+            "staffRequired": 1,
+            "allowedAreas": ["backstage"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "vip-area",
+          "label": "🎟️ VIP Area",
+          "icon": "🎟️",
+          "defaultWidth": 150,
+          "defaultHeight": 100,
+          "properties": {
+            "powerRequirement": "5kW",
+            "staffRequired": 2,
+            "allowedAreas": ["vip"],
+            "renderer": "rectangle",
+            "capacity": 50
+          }
+        },
+        {
+          "value": "photo-booth",
+          "label": "📸 Photo Booth",
+          "icon": "📸",
+          "defaultWidth": 60,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "merchandise-stand",
+          "label": "🛍️ Merchandise Stand",
+          "icon": "🛍️",
+          "defaultWidth": 80,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "seating-area",
+          "label": "🪑 Seating Area",
+          "icon": "🪑",
+          "defaultWidth": 200,
+          "defaultHeight": 100,
+          "properties": {
+            "powerRequirement": "0.5kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle",
+            "capacity": 100
+          }
+        },
+        {
+          "value": "camping-zone",
+          "label": "🏕️ Camping Zone",
+          "icon": "🏕️",
+          "defaultWidth": 500,
+          "defaultHeight": 300,
+          "properties": {
+            "powerRequirement": "10kW",
+            "staffRequired": 2,
+            "allowedAreas": ["camping"],
+            "renderer": "rectangle",
+            "capacity": 200
+          }
+        },
+        {
+          "value": "fire-pit",
+          "label": "🔥 Fire Pit",
+          "icon": "🔥",
+          "defaultWidth": 60,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public", "camping"],
+            "renderer": "circle",
+            "safetyRadius": "3m"
+          }
+        },
+        {
+          "value": "chill-out-zone",
+          "label": "🛋️ Chill-Out Zone",
+          "icon": "🛋️",
+          "defaultWidth": 200,
+          "defaultHeight": 100,
+          "properties": {
+            "powerRequirement": "2kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle",
+            "capacity": 50
+          }
+        },
+        {
+          "value": "art-installation",
+          "label": "🎨 Art Installation",
+          "icon": "🎨",
+          "defaultWidth": 100,
+          "defaultHeight": 100,
+          "properties": {
+            "powerRequirement": "0.5kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "photo-exhibition",
+          "label": "📸 Photo Exhibition",
+          "icon": "",
+          "defaultWidth": 200,
+          "defaultHeight": 150,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "interactive-installation",
+          "label": "🖼️ Interactive Installation",
+          "icon": "",
+          "defaultWidth": 150,
+          "defaultHeight": 150,
+          "properties": {
+            "powerRequirement": "2kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "petting-zoo",
+          "label": "🐾 Petting Zoo",
+          "icon": "",
+          "defaultWidth": 200,
+          "defaultHeight": 200,
+          "properties": {
+            "powerRequirement": "5kW",
+            "staffRequired": 2,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "arcade-zone",
+          "label": "🎮 Arcade Zone",
+          "icon": "",
+          "defaultWidth": 300,
+          "defaultHeight": 200,
+          "properties": {
+            "powerRequirement": "10kW",
+            "staffRequired": 3,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "game-zone",
+          "label": "🎲 Game Zone",
+          "icon": "",
+          "defaultWidth": 200,
+          "defaultHeight": 100,
+          "properties": {
+            "powerRequirement": "5kW",
+            "staffRequired": 2,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "art-workshop",
+          "label": "🎨 Art Workshop",
+          "icon": "",
+          "defaultWidth": 150,
+          "defaultHeight": 150,
+          "properties": {
+            "powerRequirement": "2kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "craft-market",
+          "label": "🛍️ Craft Market",
+          "icon": "",
+          "defaultWidth": 300,
+          "defaultHeight": 200,
+          "properties": {
+            "powerRequirement": "10kW",
+            "staffRequired": 3,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        }
+      ]
+    },
+    {
+      "group": "🎭 Backstage & Crew",
+      "category": "staff",
+      "types": [
+        {
+          "value": "backstage-lounge",
+          "label": "🎤 Backstage Lounge",
+          "icon": "🎤",
+          "defaultWidth": 120,
+          "defaultHeight": 100,
+          "properties": {
+            "powerRequirement": "5kW",
+            "staffRequired": 0,
+            "allowedAreas": ["backstage"],
+            "renderer": "rectangle",
+            "capacity": 20
+          }
+        },
+        {
+          "value": "backstage-storage",
+          "label": "📦 Backstage Storage",
+          "icon": "📦",
+          "defaultWidth": 100,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 0,
+            "allowedAreas": ["backstage"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "backstage-catering",
+          "label": "🍽️ Backstage Catering",
+          "icon": "🍽️",
+          "defaultWidth": 100,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "3kW",
+            "staffRequired": 2,
+            "allowedAreas": ["backstage"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "staff-lounge",
+          "label": "🛋️ Staff Lounge",
+          "icon": "🛋️",
+          "defaultWidth": 120,
+          "defaultHeight": 100,
+          "properties": {
+            "powerRequirement": "5kW",
+            "staffRequired": 0,
+            "allowedAreas": ["staff"],
+            "renderer": "rectangle",
+            "capacity": 20
+          }
+        },
+        {
+          "value": "crew-entrance",
+          "label": "🚪 Crew Entrance",
+          "icon": "🚪",
+          "defaultWidth": 60,
+          "defaultHeight": 100,
+          "properties": {
+            "powerRequirement": "0.5kW",
+            "staffRequired": 1,
+            "allowedAreas": ["staff", "backstage"],
+            "renderer": "rectangle",
+            "securityLevel": "high"
+          }
+        },
+        {
+          "value": "production-office",
+          "label": "📑 Production Office",
+          "icon": "📑",
+          "defaultWidth": 120,
+          "defaultHeight": 100,
+          "properties": {
+            "powerRequirement": "5kW",
+            "staffRequired": 2,
+            "allowedAreas": ["backstage"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "technical-zone",
+          "label": "🛠️ Technical Zone",
+          "icon": "🛠️",
+          "defaultWidth": 150,
+          "defaultHeight": 100,
+          "properties": {
+            "powerRequirement": "10kW",
+            "staffRequired": 2,
+            "allowedAreas": ["backstage"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "dressing-room",
+          "label": "🎭 Dressing Room",
+          "icon": "🎭",
+          "defaultWidth": 100,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "3kW",
+            "staffRequired": 0,
+            "allowedAreas": ["backstage"],
+            "renderer": "rectangle",
+            "capacity": 10
+          }
+        },
+        {
+          "value": "crew-catering",
+          "label": "🍽️ Crew Catering",
+          "icon": "🍽️",
+          "defaultWidth": 100,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "3kW",
+            "staffRequired": 2,
+            "allowedAreas": ["backstage"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "crew-parking",
+          "label": "🅿️ Crew Parking",
+          "icon": "",
+          "defaultWidth": 200,
+          "defaultHeight": 150,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 1,
+            "allowedAreas": ["backstage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "crew-security",
+          "label": "🔒 Crew Security",
+          "icon": "",
+          "defaultWidth": 100,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 2,
+            "allowedAreas": ["backstage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "crew-washroom",
+          "label": "🚻 Crew Washroom",
+          "icon": "",
+          "defaultWidth": 40,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["backstage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "crew-break-area",
+          "label": "☕ Crew Break Area",
+          "icon": "",
+          "defaultWidth": 100,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["backstage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "crew-transport",
+          "label": "🚐 Crew Transport",
+          "icon": "",
+          "defaultWidth": 100,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 1,
+            "allowedAreas": ["backstage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "crew-communication",
+          "label": "📞 Crew Communication",
+          "icon": "",
+          "defaultWidth": 20,
+          "defaultHeight": 20,
+          "properties": {
+            "powerRequirement": "0.1kW",
+            "staffRequired": 0,
+            "allowedAreas": ["backstage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "crew-safety",
+          "label": "🦺 Crew Safety",
+          "icon": "",
+          "defaultWidth": 100,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 1,
+            "allowedAreas": ["backstage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "crew-transportation",
+          "label": "🚍 Crew Transportation",
+          "icon": "",
+          "defaultWidth": 200,
+          "defaultHeight": 100,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 1,
+            "allowedAreas": ["backstage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "crew-communication-system",
+          "label": "📡 Crew Communication System",
+          "icon": "",
+          "defaultWidth": 20,
+          "defaultHeight": 20,
+          "properties": {
+            "powerRequirement": "0.1kW",
+            "staffRequired": 0,
+            "allowedAreas": ["backstage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "crew-security-checkpoint",
+          "label": "🔒 Crew Security Checkpoint",
+          "icon": "",
+          "defaultWidth": 100,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 2,
+            "allowedAreas": ["backstage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "crew-transport-vehicle",
+          "label": "🚐 Crew Transport Vehicle",
+          "icon": "",
+          "defaultWidth": 100,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 1,
+            "allowedAreas": ["backstage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "crew-safety-equipment",
+          "label": "🦺 Crew Safety Equipment",
+          "icon": "",
+          "defaultWidth": 100,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 1,
+            "allowedAreas": ["backstage"],
+            "renderer": ""
+          }
+        }
+      ]
+    },
+    {
+      "group": "🔊 Audio & Sound Equipment",
+      "category": "technical",
+      "types": [
+        {
+          "value": "line-array",
+          "label": "🔈 Line Array",
+          "icon": "🔈",
+          "defaultWidth": 40,
+          "defaultHeight": 120,
+          "properties": {
+            "powerRequirement": "2kW",
+            "staffRequired": 1,
+            "allowedAreas": ["stage"],
+            "renderer": "rectangle",
+            "frequencyRange": "50Hz-20kHz"
+          }
+        },
+        {
+          "value": "subwoofer",
+          "label": "🔊 Subwoofer",
+          "icon": "🔊",
+          "defaultWidth": 50,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "1.5kW",
+            "staffRequired": 1,
+            "allowedAreas": ["stage"],
+            "renderer": "rectangle",
+            "frequencyRange": "30Hz-150Hz"
+          }
+        },
+        {
+          "value": "monitor-speaker",
+          "label": "📢 Monitor Speaker",
+          "icon": "📢",
+          "defaultWidth": 30,
+          "defaultHeight": 40,
+          "properties": {
+            "powerRequirement": "0.5kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "dj-monitor",
+          "label": "🎧 DJ Monitor",
+          "icon": "🎧",
+          "defaultWidth": 30,
+          "defaultHeight": 30,
+          "properties": {
+            "powerRequirement": "0.1kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "front-of-house-speaker",
+          "label": "🔉 Front-of-House Speaker",
+          "icon": "🔉",
+          "defaultWidth": 40,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["stage"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "wireless-microphone",
+          "label": "🎤 Wireless Microphone",
+          "icon": "🎤",
+          "defaultWidth": 10,
+          "defaultHeight": 20,
+          "properties": {
+            "powerRequirement": "0.01kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage"],
+            "renderer": "rectangle",
+            "frequency": "UHF"
+          }
+        },
+        {
+          "value": "wired-microphone",
+          "label": "🎙️ Wired Microphone",
+          "icon": "🎙️",
+          "defaultWidth": 10,
+          "defaultHeight": 20,
+          "properties": {
+            "powerRequirement": "0.01kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage"],
+            "renderer": "rectangle",
+            "connector": "XLR"
+          }
+        },
+        {
+          "value": "microphone-stand",
+          "label": "🎤 Microphone Stand",
+          "icon": "🎤",
+          "defaultWidth": 10,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage"],
+            "renderer": "rectangle",
+            "adjustableHeight": true
+          }
+        },
+        {
+          "value": "audio-mixer",
+          "label": "🎛️ Audio Mixer",
+          "icon": "🎛️",
+          "defaultWidth": 60,
+          "defaultHeight": 40,
+          "properties": {
+            "powerRequirement": "0.5kW",
+            "staffRequired": 1,
+            "allowedAreas": ["stage", "backstage"],
+            "renderer": "rectangle",
+            "channels": 32
+          }
+        },
+        {
+          "value": "digital-mixer",
+          "label": "🎚️ Digital Mixer",
+          "icon": "🎚️",
+          "defaultWidth": 60,
+          "defaultHeight": 40,
+          "properties": {
+            "powerRequirement": "0.5kW",
+            "staffRequired": 1,
+            "allowedAreas": ["stage", "backstage"],
+            "renderer": "rectangle",
+            "channels": 64
+          }
+        },
+        {
+          "value": "analog-mixer",
+          "label": "🎚️ Analog Mixer",
+          "icon": "🎚️",
+          "defaultWidth": 60,
+          "defaultHeight": 40,
+          "properties": {
+            "powerRequirement": "0.5kW",
+            "staffRequired": 1,
+            "allowedAreas": ["stage", "backstage"],
+            "renderer": "rectangle",
+            "channels": 24
+          }
+        },
+        {
+          "value": "dj-mixer",
+          "label": "🎧 DJ Mixer",
+          "icon": "🎧",
+          "defaultWidth": 50,
+          "defaultHeight": 30,
+          "properties": {
+            "powerRequirement": "0.3kW",
+            "staffRequired": 1,
+            "allowedAreas": ["stage"],
+            "renderer": "rectangle",
+            "channels": 4
+          }
+        },
+        {
+          "value": "turntable",
+          "label": "💿 Turntable",
+          "icon": "💿",
+          "defaultWidth": 40,
+          "defaultHeight": 30,
+          "properties": {
+            "powerRequirement": "0.1kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "cdj",
+          "label": "📀 CDJ",
+          "icon": "📀",
+          "defaultWidth": 40,
+          "defaultHeight": 30,
+          "properties": {
+            "powerRequirement": "0.1kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "audio-interface",
+          "label": "🔌 Audio Interface",
+          "icon": "🔌",
+          "defaultWidth": 30,
+          "defaultHeight": 20,
+          "properties": {
+            "powerRequirement": "0.1kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage", "backstage"],
+            "renderer": "rectangle",
+            "inputs": 8
+          }
+        },
+        {
+          "value": "in-ear-monitor",
+          "label": "🎧 In-Ear Monitor",
+          "icon": "🎧",
+          "defaultWidth": 20,
+          "defaultHeight": 20,
+          "properties": {
+            "powerRequirement": "0.01kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage"],
+            "renderer": "circle"
+          }
+        },
+        {
+          "value": "monitoring-rack",
+          "label": "🖥️ Monitoring Rack",
+          "icon": "🖥️",
+          "defaultWidth": 60,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["backstage"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "stage-box",
+          "label": "📦 Stage Box",
+          "icon": "📦",
+          "defaultWidth": 40,
+          "defaultHeight": 30,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage"],
+            "renderer": "rectangle",
+            "connections": 24
+          }
+        },
+        {
+          "value": "di-box",
+          "label": "🔌 DI Box",
+          "icon": "🔌",
+          "defaultWidth": 15,
+          "defaultHeight": 10,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "compressor-limiter",
+          "label": "⚡ Compressor/Limiter",
+          "icon": "⚡",
+          "defaultWidth": 20,
+          "defaultHeight": 10,
+          "properties": {
+            "powerRequirement": "0.1kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage", "backstage"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "equalizer",
+          "label": "🎚️ Equalizer",
+          "icon": "🎚️",
+          "defaultWidth": 20,
+          "defaultHeight": 10,
+          "properties": {
+            "powerRequirement": "0.1kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage", "backstage"],
+            "renderer": "rectangle",
+            "bands": 31
+          }
+        },
+        {
+          "value": "reverb-unit",
+          "label": "🌊 Reverb Unit",
+          "icon": "🌊",
+          "defaultWidth": 20,
+          "defaultHeight": 10,
+          "properties": {
+            "powerRequirement": "0.1kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage", "backstage"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "delay-unit",
+          "label": "⏳ Delay Unit",
+          "icon": "⏳",
+          "defaultWidth": 20,
+          "defaultHeight": 10,
+          "properties": {
+            "powerRequirement": "0.1kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage", "backstage"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "multicore-cable",
+          "label": "🔀 Multicore Cable",
+          "icon": "🔀",
+          "defaultWidth": 5,
+          "defaultHeight": 200,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage", "backstage"],
+            "renderer": "line",
+            "channels": 24
+          }
+        },
+        {
+          "value": "xlr-cable",
+          "label": "🔌 XLR Cable",
+          "icon": "🔌",
+          "defaultWidth": 5,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage", "backstage"],
+            "renderer": "line"
+          }
+        },
+        {
+          "value": "jack-cable",
+          "label": "🎸 Jack Cable",
+          "icon": "🎸",
+          "defaultWidth": 5,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage", "backstage"],
+            "renderer": "line"
+          }
+        },
+        {
+          "value": "patch-bay",
+          "label": "🖧 Patch Bay",
+          "icon": "🖧",
+          "defaultWidth": 40,
+          "defaultHeight": 20,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["backstage"],
+            "renderer": "rectangle",
+            "connections": 48
+          }
+        },
+        {
+          "value": "audio-splitter",
+          "label": "🔀 Audio Splitter",
+          "icon": "🔀",
+          "defaultWidth": 20,
+          "defaultHeight": 15,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage", "backstage"],
+            "renderer": "rectangle",
+            "outputs": 3
+          }
+        },
+        {
+          "value": "pa-system",
+          "label": "📢 PA System",
+          "icon": "📢",
+          "defaultWidth": 60,
+          "defaultHeight": 40,
+          "properties": {
+            "powerRequirement": "2kW",
+            "staffRequired": 1,
+            "allowedAreas": ["stage"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "backline",
+          "label": "🎸 Backline",
+          "icon": "🎸",
+          "defaultWidth": 100,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "5kW",
+            "staffRequired": 1,
+            "allowedAreas": ["stage"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "soundproofing-panel",
+          "label": "🛑 Soundproofing Panel",
+          "icon": "🛑",
+          "defaultWidth": 50,
+          "defaultHeight": 200,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage", "backstage"],
+            "renderer": "rectangle",
+            "attenuation": "20dB"
+          }
+        },
+        {
+          "value": "acoustic-panel",
+          "label": "🔊 Acoustic Panel",
+          "icon": "🔊",
+          "defaultWidth": 50,
+          "defaultHeight": 200,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage", "backstage"],
+            "renderer": "rectangle",
+            "absorptionCoefficient": 0.8
+          }
+        },
+        {
+          "value": "monitor-rack",
+          "label": "📦 Monitor Rack",
+          "icon": "",
+          "defaultWidth": 60,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["backstage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "monitor-mixer",
+          "label": "🎚️ Monitor Mixer",
+          "icon": "",
+          "defaultWidth": 60,
+          "defaultHeight": 40,
+          "properties": {
+            "powerRequirement": "0.5kW",
+            "staffRequired": 1,
+            "allowedAreas": ["backstage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "monitor-speaker-stand",
+          "label": "📢 Monitor Speaker Stand",
+          "icon": "",
+          "defaultWidth": 10,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "monitor-cable",
+          "label": "🔌 Monitor Cable",
+          "icon": "",
+          "defaultWidth": 5,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "monitor-stand",
+          "label": "📺 Monitor Stand",
+          "icon": "",
+          "defaultWidth": 10,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "monitor-mixer-stand",
+          "label": "🎚️ Monitor Mixer Stand",
+          "icon": "",
+          "defaultWidth": 10,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "monitor-mixer-cable",
+          "label": "🔌 Monitor Mixer Cable",
+          "icon": "",
+          "defaultWidth": 5,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "monitor-mixer-rack",
+          "label": "📦 Monitor Mixer Rack",
+          "icon": "",
+          "defaultWidth": 60,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["backstage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "monitor-mixer-rack-stand",
+          "label": "📦 Monitor Mixer Rack Stand",
+          "icon": "",
+          "defaultWidth": 10,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "monitor-mixer-rack-cable",
+          "label": "🔌 Monitor Mixer Rack Cable",
+          "icon": "",
+          "defaultWidth": 5,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "monitor-mixer-rack-stand-cable",
+          "label": "🔌 Monitor Mixer Rack Stand Cable",
+          "icon": "",
+          "defaultWidth": 5,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "monitor-mixer-rack-stand-connector",
+          "label": "🔌 Monitor Mixer Rack Stand Connector",
+          "icon": "",
+          "defaultWidth": 5,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["stage"],
+            "renderer": ""
+          }
+        }
+      ]
+    },
+    {
+      "group": "🍽️ Catering & Kitchen",
+      "category": "commercial",
+      "types": [
+        {
+          "value": "kitchen",
+          "label": "👨‍🍳 Kitchen",
+          "icon": "👨‍🍳",
+          "defaultWidth": 150,
+          "defaultHeight": 100,
+          "properties": {
+            "powerRequirement": "15kW",
+            "staffRequired": 3,
+            "allowedAreas": ["service"],
+            "renderer": "rectangle",
+            "ventilationRequired": true
+          }
+        },
+        {
+          "value": "catering-tent",
+          "label": "⛺ Catering Tent",
+          "icon": "⛺",
+          "defaultWidth": 200,
+          "defaultHeight": 150,
+          "properties": {
+            "powerRequirement": "10kW",
+            "staffRequired": 5,
+            "allowedAreas": ["service"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "dishwashing-station",
+          "label": "🧼 Dishwashing Station",
+          "icon": "🧼",
+          "defaultWidth": 80,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "3kW",
+            "staffRequired": 1,
+            "allowedAreas": ["service"],
+            "renderer": "rectangle",
+            "waterRequirement": "20L/min"
+          }
+        },
+        {
+          "value": "beer-keg-station",
+          "label": "🍺 Beer Keg Station",
+          "icon": "🍺",
+          "defaultWidth": 80,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["service"],
+            "renderer": "rectangle",
+            "coolingRequired": true
+          }
+        },
+        {
+          "value": "food-storage",
+          "label": "📦 Food Storage",
+          "icon": "📦",
+          "defaultWidth": 100,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "2kW",
+            "staffRequired": 0,
+            "allowedAreas": ["service"],
+            "renderer": "rectangle",
+            "coolingRequired": true
+          }
+        },
+        {
+          "value": "food-truck",
+          "label": "🚚 Food Truck",
+          "icon": "🚚",
+          "defaultWidth": 200,
+          "defaultHeight": 100,
+          "properties": {
+            "powerRequirement": "10kW",
+            "staffRequired": 2,
+            "allowedAreas": ["service"],
+            "renderer": "rectangle",
+            "ventilationRequired": true
+          }
+        },
+        {
+          "value": "food-booth",
+          "label": "🍔 Food Booth",
+          "icon": "🍔",
+          "defaultWidth": 100,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "5kW",
+            "staffRequired": 1,
+            "allowedAreas": ["service"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "drink-station",
+          "label": "🥤 Drink Station",
+          "icon": "",
+          "defaultWidth": 80,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "2kW",
+            "staffRequired": 1,
+            "allowedAreas": ["service"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "snack-bar",
+          "label": "🍿 Snack Bar",
+          "icon": "",
+          "defaultWidth": 80,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "2kW",
+            "staffRequired": 1,
+            "allowedAreas": ["service"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "coffee-cart",
+          "label": "☕ Coffee Cart",
+          "icon": "",
+          "defaultWidth": 80,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["service"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "ice-cream-cart",
+          "label": "🍦 Ice Cream Cart",
+          "icon": "",
+          "defaultWidth": 80,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["service"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "food-waste-bin",
+          "label": "🗑️ Food Waste Bin",
+          "icon": "",
+          "defaultWidth": 40,
+          "defaultHeight": 40,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["service"],
+            "renderer": ""
+          }
+        }
+      ]
+    },
+    {
+      "group": "🔒 Security & Staff",
+      "category": "operations",
+      "types": [
+        {
+          "value": "security-checkpoint",
+          "label": "🛑 Security Checkpoint",
+          "icon": "🛑",
+          "defaultWidth": 80,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 2,
+            "allowedAreas": ["entrance"],
+            "renderer": "rectangle",
+            "securityLevel": "high"
+          }
+        },
+        {
+          "value": "staff-lounge",
+          "label": "💼 Staff Lounge",
+          "icon": "💼",
+          "defaultWidth": 120,
+          "defaultHeight": 100,
+          "properties": {
+            "powerRequirement": "5kW",
+            "staffRequired": 0,
+            "allowedAreas": ["staff"],
+            "renderer": "rectangle",
+            "capacity": 20
+          }
+        },
+        {
+          "value": "lost-and-found",
+          "label": "🎒 Lost & Found",
+          "icon": "🎒",
+          "defaultWidth": 60,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "0.5kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "ticket-booth",
+          "label": "🎫 Ticket Booth",
+          "icon": "🎫",
+          "defaultWidth": 60,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["entrance"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "info-desk",
+          "label": "ℹ️ Info Desk",
+          "icon": "ℹ️",
+          "defaultWidth": 80,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "first-aid-station",
+          "label": "🚑 First Aid Station",
+          "icon": "🚑",
+          "defaultWidth": 80,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "1kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "emergency-exit",
+          "label": "🚪 Emergency Exit",
+          "icon": "",
+          "defaultWidth": 40,
+          "defaultHeight": 100,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "security-camera",
+          "label": "📹 Security Camera",
+          "icon": "",
+          "defaultWidth": 20,
+          "defaultHeight": 20,
+          "properties": {
+            "powerRequirement": "0.1kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "security-lighting",
+          "label": "💡 Security Lighting",
+          "icon": "",
+          "defaultWidth": 20,
+          "defaultHeight": 20,
+          "properties": {
+            "powerRequirement": "0.1kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "security-fence",
+          "label": "🚧 Security Fence",
+          "icon": "",
+          "defaultWidth": 200,
+          "defaultHeight": 200,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "security-guard",
+          "label": "👮 Security Guard",
+          "icon": "",
+          "defaultWidth": 20,
+          "defaultHeight": 20,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "security-patrol",
+          "label": "🚓 Security Patrol",
+          "icon": "",
+          "defaultWidth": 100,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "security-drone",
+          "label": "🛸 Security Drone",
+          "icon": "",
+          "defaultWidth": 20,
+          "defaultHeight": 20,
+          "properties": {
+            "powerRequirement": "0.1kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "security-vehicle",
+          "label": "🚔 Security Vehicle",
+          "icon": "",
+          "defaultWidth": 100,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "security-incident-report",
+          "label": "📝 Security Incident Report",
+          "icon": "",
+          "defaultWidth": 20,
+          "defaultHeight": 20,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "security-incident-response-team",
+          "label": "🚨 Security Incident Response Team",
+          "icon": "",
+          "defaultWidth": 100,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 2,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "security-incident-response-plan",
+          "label": "📋 Security Incident Response Plan",
+          "icon": "",
+          "defaultWidth": 20,
+          "defaultHeight": 20,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "security-incident-response-kit",
+          "label": "🧰 Security Incident Response Kit",
+          "icon": "",
+          "defaultWidth": 20,
+          "defaultHeight": 20,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "security-incident-response-training",
+          "label": "📚 Security Incident Response Training",
+          "icon": "",
+          "defaultWidth": 20,
+          "defaultHeight": 20,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "security-incident-response-drill",
+          "label": "🚨 Security Incident Response Drill",
+          "icon": "",
+          "defaultWidth": 20,
+          "defaultHeight": 20,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "security-incident-response-team-training",
+          "label": "📚 Security Incident Response Team Training",
+          "icon": "",
+          "defaultWidth": 20,
+          "defaultHeight": 20,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        }
+      ]
+    },
+    {
+      "group": "🌍 Eco & Sustainability",
+      "category": "sustainability",
+      "types": [
+        {
+          "value": "solar-panel",
+          "label": "☀️ Solar Panel",
+          "icon": "☀️",
+          "defaultWidth": 100,
+          "defaultHeight": 50,
+          "properties": {
+            "powerOutput": "5kW",
+            "staffRequired": 0,
+            "allowedAreas": ["service", "backstage"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "wind-turbine",
+          "label": "🌬️ Wind Turbine",
+          "icon": "🌬️",
+          "defaultWidth": 50,
+          "defaultHeight": 100,
+          "properties": {
+            "powerOutput": "3kW",
+            "staffRequired": 0,
+            "allowedAreas": ["service"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "eco-friendly-zone",
+          "label": "🌱 Eco-friendly Zone",
+          "icon": "🌱",
+          "defaultWidth": 200,
+          "defaultHeight": 200,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "rainwater-collection",
+          "label": "🌧️ Rainwater Collection",
+          "icon": "🌧️",
+          "defaultWidth": 80,
+          "defaultHeight": 80,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["service"],
+            "renderer": "rectangle",
+            "capacity": "1000L"
+          }
+        },
+        {
+          "value": "compost-bin",
+          "label": "🍂 Compost Bin",
+          "icon": "🍂",
+          "defaultWidth": 40,
+          "defaultHeight": 40,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["service"],
+            "renderer": "rectangle",
+            "capacity": "200L"
+          }
+        },
+        {
+          "value": "recycling-station",
+          "label": "♻️ Recycling Station",
+          "icon": "♻️",
+          "defaultWidth": 80,
+          "defaultHeight": 60,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 1,
+            "allowedAreas": ["public"],
+            "renderer": "rectangle"
+          }
+        },
+        {
+          "value": "eco-friendly-transport",
+          "label": "🚲 Eco-friendly Transport",
+          "icon": "",
+          "defaultWidth": 100,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "0kW",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "sustainable-food-options",
+          "label": "",
+          "icon": "",
+          "defaultWidth": 100,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "eco-friendly-merchandise",
+          "label": "",
+          "icon": "",
+          "defaultWidth": 100,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "sustainable-practices",
+          "label": "",
+          "icon": "",
+          "defaultWidth": 100,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "eco-friendly-packaging",
+          "label": "",
+          "icon": "",
+          "defaultWidth": 100,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "sustainable-waste-management",
+          "label": "",
+          "icon": "",
+          "defaultWidth": 100,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "eco-friendly-initiatives",
+          "label": "",
+          "icon": "",
+          "defaultWidth": 100,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "sustainable-energy-sources",
+          "label": "",
+          "icon": "",
+          "defaultWidth": 100,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        },
+        {
+          "value": "eco-friendly-materials",
+          "label": "",
+          "icon": "",
+          "defaultWidth": 100,
+          "defaultHeight": 50,
+          "properties": {
+            "powerRequirement": "",
+            "staffRequired": 0,
+            "allowedAreas": ["public"],
+            "renderer": ""
+          }
+        }
+      ]
+    }
+  ]
+}

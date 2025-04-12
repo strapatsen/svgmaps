@@ -732,3 +732,307 @@ class PaintTool extends Tool {
     }
     }
 }
+
+class PolygonShapeTool extends Tool {
+    constructor(eventManager, sides) {
+      super(eventManager);
+      this.cursor = 'crosshair';
+      this.sides = sides;
+    }
+  
+    handleStart(x, y, event) {
+      super.handleStart(x, y, event);
+      const snapped = this.snapToGrid(x, y);
+      this.tempElement = this.createElement(
+        `polygon-${this.sides}`,
+        'polygon',
+        snapped.x,
+        snapped.y,
+        snapped.x,
+        snapped.y,
+        {
+          stroke: '#000000',
+          strokeWidth: 1,
+          fill: '#ffffff',
+          isTemp: true
+        }
+      );
+    }
+  
+    handleMove(x, y, event) {
+      super.handleMove(x, y, event);
+      if (this.tempElement && event.buttons === 1) {
+        const center = this.snapToGrid(this.startX, this.startY);
+        const edge = this.snapToGrid(x, y);
+        const radius = Math.sqrt(
+          Math.pow(edge.x - center.x, 2) +
+          Math.pow(edge.y - center.y, 2)
+        );
+        const points = [];
+        for (let i = 0; i < this.sides; i++) {
+          const angle = (2 * Math.PI * i) / this.sides - Math.PI / 2;
+          const px = center.x + radius * Math.cos(angle);
+          const py = center.y + radius * Math.sin(angle);
+          points.push(`${px},${py}`);
+        }
+        this.tempElement.points = points.join(' ');
+        this.tempElement.x = center.x - radius;
+        this.tempElement.y = center.y - radius;
+        this.tempElement.width = radius * 2;
+        this.tempElement.height = radius * 2;
+        this.eventManager.emit('element:update-temp', this.tempElement);
+      }
+    }
+  
+    handleEnd(x, y, event) {
+      if (this.tempElement && this.tempElement.points) {
+        const element = this.createElement(
+          `polygon-${this.sides}`,
+          'polygon',
+          this.tempElement.x,
+          this.tempElement.y,
+          this.tempElement.width,
+          this.tempElement.height,
+          {
+            points: this.tempElement.points,
+            stroke: '#000000',
+            strokeWidth: 1,
+            fill: '#ffffff'
+          }
+        );
+        this.eventManager.emit('element:add-to-layer', element);
+      }
+      super.handleEnd(x, y, event);
+    }
+}
+  
+class ExternalSVGTool extends Tool {
+    constructor(eventManager, urlProvider) {
+      super(eventManager);
+      this.cursor = 'crosshair';
+      this.urlProvider = urlProvider;
+    }
+  
+    async handleStart(x, y, event) {
+      super.handleStart(x, y, event);
+      const snapped = this.snapToGrid(x, y);
+      const url = await this.urlProvider();
+      if (!url) return;
+      fetch(url)
+        .then(res => res.text())
+        .then(svgText => {
+          const parser = new DOMParser();
+          const svgDoc = parser.parseFromString(svgText, 'image/svg+xml');
+          const svgElement = svgDoc.documentElement;
+          const wrapper = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+          wrapper.innerHTML = svgElement.innerHTML;
+          const element = this.createElement(
+            'external-svg',
+            'g',
+            snapped.x,
+            snapped.y,
+            100,
+            100,
+            {
+              raw: wrapper.innerHTML,
+              stroke: 'none',
+              fill: 'none'
+            }
+          );
+          this.eventManager.emit('element:add-to-layer', element);
+        });
+    }
+}
+
+class StarTool extends Tool {
+
+    constructor(eventManager, points) {
+    super(eventManager);
+    this.cursor = 'crosshair';
+    this.pointsCount = points;
+    }
+
+    handleStart(x, y, event) {
+    super.handleStart(x, y, event);
+    const snapped = this.snapToGrid(x, y);
+    this.tempElement = this.createElement(
+        'star',
+        'polygon',
+        snapped.x,
+        snapped.y,
+        snapped.x,
+        snapped.y,
+        {
+        stroke: '#000000',
+        strokeWidth: 1,
+        fill: '#ffffff',
+        isTemp: true
+        }
+    );
+    }
+
+    handleMove(x, y, event) {
+    super.handleMove(x, y, event);
+    if (this.tempElement && event.buttons === 1) {
+        const cx = this.startX;
+        const cy = this.startY;
+        const outerR = Math.sqrt(Math.pow(x - cx, 2) + Math.pow(y - cy, 2));
+        const innerR = outerR / 2.5;
+        const points = [];
+        for (let i = 0; i < this.pointsCount * 2; i++) {
+        const angle = (Math.PI / this.pointsCount) * i - Math.PI / 2;
+        const r = i % 2 === 0 ? outerR : innerR;
+        const px = cx + r * Math.cos(angle);
+        const py = cy + r * Math.sin(angle);
+        points.push(`${px},${py}`);
+        }
+        this.tempElement.points = points.join(' ');
+        this.tempElement.x = cx - outerR;
+        this.tempElement.y = cy - outerR;
+        this.tempElement.width = outerR * 2;
+        this.tempElement.height = outerR * 2;
+        this.eventManager.emit('element:update-temp', this.tempElement);
+    }
+    }
+
+    handleEnd(x, y, event) {
+    if (this.tempElement && this.tempElement.points) {
+        const element = this.createElement(
+        'star',
+        'polygon',
+        this.tempElement.x,
+        this.tempElement.y,
+        this.tempElement.width,
+        this.tempElement.height,
+        {
+            points: this.tempElement.points,
+            stroke: '#000000',
+            strokeWidth: 1,
+            fill: '#ffffff'
+        }
+        );
+        this.eventManager.emit('element:add-to-layer', element);
+    }
+    super.handleEnd(x, y, event);
+    }
+
+}
+
+class ColorTool {
+    constructor(root) {
+     this.root = root
+     this.mode = 'solid'
+     this.color = '#000000'
+     this.gradientStops = [{ color: '#000000', position: 0 }, { color: '#ffffff', position: 100 }]
+     this.pattern = ''
+    }
+   
+    setMode(mode) {
+     this.mode = mode
+    }
+   
+    setColor(value) {
+     this.color = value
+    }
+   
+    setGradientStops(stops) {
+     this.gradientStops = stops
+    }
+   
+    setPattern(url) {
+     this.pattern = url
+    }
+   
+    getValue() {
+     if (this.mode === 'solid') return this.color
+     if (this.mode === 'linear') return `linear-gradient(${this.gradientStops.map(s => `${s.color} ${s.position}%`).join(', ')})`
+     if (this.mode === 'radial') return `radial-gradient(${this.gradientStops.map(s => `${s.color} ${s.position}%`).join(', ')})`
+     if (this.mode === 'pattern') return `url(${this.pattern})`
+     return null
+    }
+}
+
+class GroupTool {
+    constructor() {
+     this.groups = []
+    }
+   
+    group(elements) {
+     const group = { id: crypto.randomUUID(), elements: [...elements] }
+     this.groups.push(group)
+     return group
+    }
+   
+    ungroup(groupId) {
+     const index = this.groups.findIndex(g => g.id === groupId)
+     if (index > -1) {
+      const elements = this.groups[index].elements
+      this.groups.splice(index, 1)
+      return elements
+     }
+     return []
+    }
+}
+
+class SelectionTool {
+    constructor(elements) {
+     this.elements = elements
+    }
+   
+    selectByType(type) {
+     return this.elements.filter(e => e.type === type)
+    }
+   
+    selectByLayer(layer) {
+     return this.elements.filter(e => e.layer === layer)
+    }
+   
+    selectByTag(tag) {
+     return this.elements.filter(e => e.tags?.includes(tag))
+    }
+
+    selectAllInLayer(layer) {
+        return this.elements.filter(e => e.layer === layer);
+    }
+
+    selectNone() {
+        return this.elements.filter(e => false); // No elements selected
+    }
+    selectAll() {
+        return this.elements;
+    }
+    selectInvert() {
+        const allElements = this.elements;
+        const selectedElements = this.elements.filter(e => e.selected);
+        return allElements.filter(e => !selectedElements.includes(e));
+    }
+}
+// Register Tools
+const tools = {
+    triangle: (em) => new PolygonShapeTool(em, 3),
+    pentagon: (em) => new PolygonShapeTool(em, 5),
+    hexagon: (em) => new PolygonShapeTool(em, 6),
+    star: (em) => new StarTool(em, 5),
+    externalSvg: (em) => new ExternalSVGTool(em, async () => prompt("Voer URL naar SVG-bestand in:")),
+    rectangle: (em) => new RectangleTool(em),
+    circle: (em) => new CircleTool(em),
+    line: (em) => new LineTool(em),
+    polygon: (em) => new PolygonTool(em),
+    text: (em) => new TextTool(em),
+    measure: (em) => new MeasureTool(em),
+    select: (em) => new SelectTool(em),
+    eraser: (em) => new EraserTool(em),
+    paint: (em) => new PaintTool(em),
+    color: (em) => new ColorTool(em),
+    gradient: (em) => new ColorTool(em),
+    pattern: (em) => new ColorTool(em),
+    group: (em) => new GroupTool(em),
+    ungroup: (em) => new GroupTool(em),
+    selectByType: (em) => new SelectionTool(em.elements),
+    selectByLayer: (em) => new SelectionTool(em.elements),
+    selectByTag: (em) => new SelectionTool(em.elements),
+    selectAll: (em) => new SelectionTool(em.elements),
+    selectNone: (em) => new SelectionTool(em.elements),
+    selectInvert: (em) => new SelectionTool(em.elements),
+    selectAllInLayer: (em) => new SelectionTool(em.elements),
+};

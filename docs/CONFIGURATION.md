@@ -136,8 +136,6 @@ document.getElementById('save-btn').addEventListener('click', () => {
  */
 ```
 
-
-
 ---
 
 ## Available Tools and Their Options

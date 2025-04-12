@@ -1,5 +1,9 @@
+import elementTypes from '../../element-types.json';
+
 class ElementManager {
-    constructor(eventManager, layerManager) {
+
+  constructor(eventManager, layerManager) {
+      this.elementTypes = elementTypes.elementTypes;
       this.eventManager = eventManager;
       this.layerManager = layerManager;
       this.selectedElement = null;

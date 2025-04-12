@@ -1,0 +1,22 @@
+SVGMAPS ARCHITECTUUR (PURE JS)
+
+CORE COMPONENTEN:
+1. TerrainEditorApp - Mainclass
+   ├── eventManager
+   ├── projectManager
+   ├── toolManager
+   ├── elementManager
+   └── viewportManager
+
+2. EventManager - Central event system
+   ├── on() - Listen to events
+   └── emit() - Send events
+
+3. Managers - Functionaliteit per domein
+   ├── ProjectManager - Project state
+   ├── ToolManager - Active tools
+   ├── ElementManager - Element management
+   └── ViewportManager - Canvas rendering
+
+DATA FLOW:
+UI → Tool → Event → Manager → Viewport Update
