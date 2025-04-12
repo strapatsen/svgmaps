@@ -264,4 +264,3 @@ class ViewportManager {
       }
     }
 }
-export default ViewportManager;

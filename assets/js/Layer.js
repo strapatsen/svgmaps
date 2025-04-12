@@ -59,4 +59,3 @@ class Layer {
       return layer;
     }
 }
-export default Layer;

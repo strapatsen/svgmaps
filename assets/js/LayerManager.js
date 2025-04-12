@@ -105,4 +105,3 @@ class LayerManager {
       });
     }
 }
-export default LayerManager;

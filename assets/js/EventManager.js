@@ -68,6 +68,3 @@ class EventManager {
 	  this.listeners.clear();
 	}
 }
-  
-// Export voor modulair gebruik
-export default EventManager;

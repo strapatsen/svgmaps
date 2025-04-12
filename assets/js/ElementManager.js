@@ -1,5 +1,3 @@
-import elementTypes from '../../element-types.json';
-
 class ElementManager {
 
   constructor(eventManager, layerManager) {
@@ -260,5 +258,3 @@ class ElementManager {
       return inside;
     }
   }
-  
-  export default ElementManager;

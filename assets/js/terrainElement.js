@@ -147,5 +147,3 @@ class TerrainElement {
       });
     }
 }
-  
-export default TerrainElement;

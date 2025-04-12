@@ -1,4 +1,4 @@
-// TOOL MANAGER & TOOLS IMPLEMENTATION
+
 class ToolManager {
     constructor(eventManager) {
       this.eventManager = eventManager;
