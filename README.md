@@ -5,11 +5,12 @@
 ![SVG Maps Preview](screenshot_app.png)
 
 ## Core Features
-- **Zero-dependency** vanilla JS implementation
+- **Zero-dependency** (vanilla JS)
 - **Event-driven architecture**
 - **Extendable plugin system**
 - **Full undo/redo functionality**
 - **Multi-layer support**
+- **And more...**
 
 ## Basic Setup
 
@@ -30,8 +31,12 @@
   <script src="terrain-editor.js"></script>
   <script>
     const editor = new TerrainEditorApp({
-      canvasId: 'main-canvas',
-      defaultUnits: 'meters'
+      canvasId: 'editor-canvas',
+      defaultScale: 0.8,
+      grid: {
+        visible: true,
+        size: 50 // pixels
+      }
     });
   </script>
 </body>
