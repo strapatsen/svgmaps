@@ -4,26 +4,39 @@
 
 ![SVG Maps Preview](screenshot_app.png)
 
-## Features
-- **Multipe layers** - Support multiple layers and manage them in the sidebar 
-- **SVG-based terrain editing** – Draw and modify terrain with vector precision  
-- **Customizable heightmaps** – Adjust elevation data visually  
-- **Texture & style controls** – Apply colors, patterns, and effects  
-- **Grid & snapping tools** – Align elements with precision  
-- **Real-time property editing** – Adjust terrain parameters without a save button  
-- **Export to SVG/PNG** – Save maps for web or print  
-- **Project Files (*.wmap) ** – Make projects, includes all content
+## Core Features
+- **Zero-dependency** vanilla JS implementation
+- **Event-driven architecture**
+- **Extendable plugin system**
+- **Full undo/redo functionality**
+- **Multi-layer support**
 
-## ToDo 
-- [x] Layer support  
-- [x] Undo/redo functionality
-- [ ] Gallery
-- [ ] Import galleries from store
-- [ ] Layers tab; Show all elements in list below each layer (with show/hide,lock/unlock)
-- [ ] Layers tab; right-click menu on for layers and elements
-- [ ] Import GeoJSON data
-- [ ] More drawing elements : Triangle, Star, pentagram enz.
+## Basic Setup
 
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Terrain Editor</title>
+  <style>
+    #editor-container { width: 100%; height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="editor-container">
+    <canvas id="main-canvas"></canvas>
+  </div>
+  
+  <script src="terrain-editor.js"></script>
+  <script>
+    const editor = new TerrainEditorApp({
+      canvasId: 'main-canvas',
+      defaultUnits: 'meters'
+    });
+  </script>
+</body>
+</html>
+```
 
 ## License  
 MIT © 2025 STRAPATSEN 
