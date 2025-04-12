@@ -366,3 +366,23 @@ class TerrainEditorApp {
       this.eventManager.emit('app:started');
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const legendPanel = document.getElementById('legend-panel');
+  const closeLegendButton = document.getElementById('close-legend');
+  const tabButtons = document.querySelectorAll('.legend-tabs .tab-btn');
+
+  // Event listener for the close button
+  closeLegendButton.addEventListener('click', () => {
+      legendPanel.classList.remove('active');
+  });
+
+  // Event listener for tab buttons
+  tabButtons.forEach(tabButton => {
+      tabButton.addEventListener('click', () => {
+          if (!legendPanel.classList.contains('active')) {
+              legendPanel.classList.add('active');
+          }
+      });
+  });
+});

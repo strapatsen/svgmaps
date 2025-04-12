@@ -359,10 +359,20 @@ body {
 .editor-container .legend-panel.active {
 	right: 0px;
 }
+.editor-container .legend-panel  .close-legend-btn {
+	color: rgba(255, 255, 255, 0.7);
+	background: transparent;
+	border:none;
+	cursor: pointer;
+	font-size: 14px;
+}
+.editor-container .legend-panel  .close-legend-btn:hover {
+	color: rgba(255, 255, 255, 1);
+}
 .editor-container .legend-panel .legend-header {
 	display: none;
-	padding: 0px;
-	padding-right: 6px;
+	padding: 4px;
+	padding-right: 4px;
 	background-color: rgba(0, 0, 0, 1);
 	color: rgba(255, 165, 0, 1);
 	justify-content: space-between;
