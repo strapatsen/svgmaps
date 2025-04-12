@@ -114,22 +114,98 @@ class TerrainEditorApp {
     }
   
     showElementProperties(element) {
+      const typeDef = elementManager.getTypeDefinition(element.type);
+      
       const panel = this.ui.propertiesPanel;
       panel.innerHTML = `
         <h3>${element.type} Properties</h3>
         <div class="property-group">
-          <label>Position</label>
-          <input type="number" data-property="x" value="${element.x}">
-          <input type="number" data-property="y" value="${element.y}">
+          <label>Name</label>
+          <input type="text" data-property="name" value="${element.name}">
         </div>
         <div class="property-group">
-          <label>Size</label>
-          <input type="number" data-property="width" value="${element.width}">
-          <input type="number" data-property="height" value="${element.height}">
+          <label>Type</label>
+          <select data-property="type">
+        ${this.elementManager.elementTypes
+          .map(group => `
+        <optgroup label="${group.label}">
+          ${group.types
+            .map(type => `<option value="${type.value}" ${type.value === element.type ? 'selected' : ''}>${type.label || type.value}</option>`)
+            .join('')}
+        </optgroup>
+          `)
+          .join('')}
+          </select>
         </div>
         <div class="property-group">
           <label>Color</label>
           <input type="color" data-property="color" value="${element.color}">
+        </div>
+        <div class="property-group">
+          <label>Opacity</label>
+          <input type="range" data-property="opacity" min="0" max="1" step="0.01" value="${element.opacity}">
+        </div>
+        <div class="property-group">
+          <label>Width</label>
+          <input type="number" data-property="width" value="${element.width}">
+        </div>
+        <div class="property-group">
+          <label>Height</label>
+          <input type="number" data-property="height" value="${element.height}">
+        </div>
+        <div class="property-group">
+          <label>Position X</label>
+          <input type="number" data-property="x" value="${element.x}">
+        </div>
+        <div class="property-group">
+          <label>Position Y</label>
+          <input type="number" data-property="y" value="${element.y}">
+        </div>
+        <div class="property-group">
+          <label>Scale X</label>
+          <input type="number" data-property="scaleX" value="${element.scaleX}">
+        </div>
+        <div class="property-group">
+          <label>Scale Y</label>
+          <input type="number" data-property="scaleY" value="${element.scaleY}">
+        </div>
+        <div class="property-group">
+          <label>Rotation</label>
+          <input type="number" data-property="rotation" value="${element.rotation}">
+        </div>
+        
+        `
+        ctx.fillStyle = getColorForPower(typeDef.properties.powerRequirement); 
+        drawElement[typeDef.properties.renderer](element)
+        `
+        <div class="property-group">
+          <label>Metadata</label>
+          <textarea data-property="metadata">${JSON.stringify(element.metadata, null, 2)}</textarea>
+        </div>
+        <div class="property-group">
+          <label>
+        <input type="checkbox" data-property="locked" ${element.locked ? 'checked' : ''}>
+        Locked
+          </label>
+        </div>
+        <div class="property-group">
+          <label>
+        <input type="checkbox" data-property="visible" ${element.visible ? 'checked' : ''}>
+        Visible
+          </label>
+        </div>
+        
+        <div class="property-group">
+          <button data-action="duplicate">Duplicate</button>
+        </div>
+        <div class="property-group">
+          <button data-action="export">Export</button>
+        </div>
+        <div class="property-group">
+          <button data-action="import">Import</button>
+        </div>
+        <div class="property-group">
+          <button data-action="delete">Delete</button>
         </div>
       `;
   

@@ -3,16 +3,25 @@ import elementTypes from '../../element-types.json';
 class ElementManager {
 
   constructor(eventManager, layerManager) {
-      this.elementTypes = elementTypes.elementTypes;
+      this.elementTypes = [];
+      this.loadElementTypes();
       this.eventManager = eventManager;
       this.layerManager = layerManager;
       this.selectedElement = null;
       this.hoveredElement = null;
       this.tempElement = null;
       this.elementCount = 0;
-  
+      this.lastPosition = null;
+    
       this.setupEventListeners();
       this.initTools();
+     
+    }
+  
+    async loadElementTypes() {
+      const response = await fetch('data/element-types.json');
+      const data = await response.json();
+      this.elementTypes = data.elementTypes;
     }
   
     setupEventListeners() {

@@ -974,39 +974,6 @@ class GroupTool {
     }
 }
 
-class SelectionTool {
-    constructor(elements) {
-     this.elements = elements
-    }
-   
-    selectByType(type) {
-     return this.elements.filter(e => e.type === type)
-    }
-   
-    selectByLayer(layer) {
-     return this.elements.filter(e => e.layer === layer)
-    }
-   
-    selectByTag(tag) {
-     return this.elements.filter(e => e.tags?.includes(tag))
-    }
-
-    selectAllInLayer(layer) {
-        return this.elements.filter(e => e.layer === layer);
-    }
-
-    selectNone() {
-        return this.elements.filter(e => false); // No elements selected
-    }
-    selectAll() {
-        return this.elements;
-    }
-    selectInvert() {
-        const allElements = this.elements;
-        const selectedElements = this.elements.filter(e => e.selected);
-        return allElements.filter(e => !selectedElements.includes(e));
-    }
-}
 // Register Tools
 const tools = {
     triangle: (em) => new PolygonShapeTool(em, 3),
@@ -1028,11 +995,4 @@ const tools = {
     pattern: (em) => new ColorTool(em),
     group: (em) => new GroupTool(em),
     ungroup: (em) => new GroupTool(em),
-    selectByType: (em) => new SelectionTool(em.elements),
-    selectByLayer: (em) => new SelectionTool(em.elements),
-    selectByTag: (em) => new SelectionTool(em.elements),
-    selectAll: (em) => new SelectionTool(em.elements),
-    selectNone: (em) => new SelectionTool(em.elements),
-    selectInvert: (em) => new SelectionTool(em.elements),
-    selectAllInLayer: (em) => new SelectionTool(em.elements),
 };
