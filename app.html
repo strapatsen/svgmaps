@@ -5,13 +5,24 @@
         <title>SVG Maps</title>
         <meta name="description" content="An advanced editor for creating and customizing SVG-based terrain maps with powerful tools and features.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Strapatsen">
+        <meta name="copyright" content="Strapatsen (C) 2024. MIT License.">
+        <meta name="keywords" content="SVG, Maps, Terrain, Editor, Customization, Graphics, Design">
+
+        <!-- Search Machines -->
+        <meta name="robots" content="no-index, no-follow, noarchive, nosnippet, noimageindex, noodp, noydir">
+        <meta name="googlebot" content="no-index, no-follow, noarchive, nosnippet, noimageindex, noodp, noydir">
+        <meta name="google" content="translate">
+        
+        <!-- Web Application -->
+        <meta name="application-name" content="SVG Maps">
+        <meta name="apple-mobile-web-app-title" content="SVG Maps">
         <meta name="theme-color" content="#000000">
         <meta name="msapplication-TileColor" content="#000000">
         <meta name="msapplication-TileImage" content="/assets/img/icons/icon-144x144.png">
         <meta name="msapplication-config" content="/assets/browserconfig.xml">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="apple-mobile-web-app-title" content="TerrainEditor">
         <link rel="apple-touch-icon" href="/assets/img/icons/icon-192x192.png">
         <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icons/icon-192x192.png">
         <link rel="icon" type="image/png" sizes="512x512" href="/assets/img/icons/icon-512x512.png">
@@ -19,11 +30,28 @@
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/icon-32x32.png">
         <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/icons/icon-96x96.png">
         <link rel="manifest" href="/assets/manifest.json">
+        
+        <!-- CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
         <link rel="stylesheet" href="/assets/css/app.css">
         <link rel="stylesheet" href="/assets/css/theme.css">
+
+        <!-- JS -->
+        <script src="assets/js/TerrainEditorApp.js"></script>
+        <script src="assets/js/ElementManager.js"></script>
+        <script src="assets/js/EventManager.js"></script>
+        <script src="assets/js/Layer.js"></script>
+        <script src="assets/js/LayerManager.js"></script>
+        <script src="assets/js/MenuSystem.js"></script>
+        <script src="assets/js/PluginManager.js"></script>
+        <script src="assets/js/ProjectManager.js"></script>
+        <script src="assets/js/TerrainElement.js"></script>
+        <script src="assets/js/ToolManager.js"></script>
+        <script src="assets/js/Tools.js"></script>
+        <script src="assets/js/ViewportManager.js"></script>
+        
     </head>
     <body>
         <div class="editor-container">
@@ -396,10 +424,8 @@
                 </div>
             </div>
 
-            <label for="file-input" class="hidden-label visually-hidden">Upload Map File</label>
             <input type="file" id="file-input" accept=".wmap" class="hidden-input" title="Upload a map file" placeholder="Choose a map file">
         
         </div>
-        <script src="/assets/js/app.js" async defer></script>
     </body>
 </html>

@@ -1,0 +1,38 @@
+{
+    "name": "SVG Maps",
+    "version": "1.0.0",
+    "description": "An advanced editor for creating and customizing SVG-based terrain maps with powerful tools and features.",
+    "author": "Strapatsen",
+    "license": "MIT",
+    "main": "index.html",
+    "scripts": {},
+    "dependencies": {},
+    "devDependencies": {},
+    "keywords": [
+        "terrain",
+        "editor",
+        "svg",
+        "maps",
+        "web-app",
+        "terrain-editor",
+        "map-editor",
+        "terrain-maps",
+        "svg-maps",
+        "svg-editor",
+        "vanilla-js",
+        "javascript",
+        "html",
+        "css"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/strapatsen/TerrainEditor.git"
+    },
+    "bugs": {
+        "url": "https://github.com/strapatsen/TerrainEditor/issues"
+    },
+    "homepage": "https://github.com/strapatsen/TerrainEditor#readme",
+    "engines": {
+        "node": ">=16.0.0"
+    }
+}

@@ -130,8 +130,8 @@ class TerrainEditorApp {
           .map(group => `
         <optgroup label="${group.label}">
           ${group.types
-            .map(type => `<option value="${type.value}" ${type.value === element.type ? 'selected' : ''}>${type.label || type.value}</option>`)
-            .join('')}
+        .map(type => `<option value="${type.value}" ${type.value === element.type ? 'selected' : ''}>${type.label || type.value}</option>`)
+        .join('')}
         </optgroup>
           `)
           .join('')}
@@ -173,11 +173,6 @@ class TerrainEditorApp {
           <label>Rotation</label>
           <input type="number" data-property="rotation" value="${element.rotation}">
         </div>
-        
-        `
-        ctx.fillStyle = getColorForPower(typeDef.properties.powerRequirement); 
-        drawElement[typeDef.properties.renderer](element)
-        `
         <div class="property-group">
           <label>Metadata</label>
           <textarea data-property="metadata">${JSON.stringify(element.metadata, null, 2)}</textarea>
@@ -194,7 +189,6 @@ class TerrainEditorApp {
         Visible
           </label>
         </div>
-        
         <div class="property-group">
           <button data-action="duplicate">Duplicate</button>
         </div>
@@ -208,6 +202,31 @@ class TerrainEditorApp {
           <button data-action="delete">Delete</button>
         </div>
       `;
+
+      panel.querySelectorAll('input, select, textarea').forEach(input => {
+        input.addEventListener('change', (e) => {
+          const value = input.type === 'checkbox' ? input.checked : input.value;
+          this.elementManager.updateElement(element.id, {
+        [e.target.dataset.property]: value
+          });
+        });
+      });
+
+      panel.querySelector('[data-action="duplicate"]').addEventListener('click', () => {
+        this.elementManager.duplicateElement(element.id);
+      });
+
+      panel.querySelector('[data-action="export"]').addEventListener('click', () => {
+        this.elementManager.exportElement(element.id);
+      });
+
+      panel.querySelector('[data-action="import"]').addEventListener('click', () => {
+        this.elementManager.importElement();
+      });
+
+      panel.querySelector('[data-action="delete"]').addEventListener('click', () => {
+        this.elementManager.deleteElement(element.id);
+      });
   
       panel.querySelectorAll('input').forEach(input => {
         input.addEventListener('change', (e) => {
