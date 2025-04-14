@@ -1,0 +1,148 @@
+:root {
+  --font-family: 'Roboto', sans-serif;
+  --bg-color: #f9f9f9;
+  --text-color: #111;
+  --primary-color: #3367d6;
+  --primary-color-hover: #4a84f5;
+  --secondary-color: #ddd;
+  --panel-bg: #ffffff;
+  --panel-border: rgba(0, 0, 0, 0.08);
+  --highlight-color: #43a047;
+  --danger-color: #e53935;
+  --tooltip-bg: rgba(0, 0, 0, 0.85);
+  --tooltip-text: #fff;
+  --input-bg: #fff;
+  --input-color: #000;
+  --scrollbar-track: #eeeeee;
+  --scrollbar-thumb: rgba(0,0,0,0.1);
+  --scrollbar-thumb-hover: rgba(0,0,0,0.2);
+  --select-arrow-color: rgba(0, 0, 0, 0.3);
+  --select-arrow-hover: rgba(0, 0, 0, 0.6);
+  --context-bg: #ffffff;
+  --context-hover: rgba(51,103,214,0.08);
+  --context-text: #3367d6;
+  --legend-bg: #fafafa;
+  --legend-header-bg: #eaeaea;
+  --legend-header-text: #3367d6;
+  --legend-content-bg: #fff;
+  --legend-tab-bg: #f1f1f1;
+  --legend-tab-hover: #e0e0e0;
+  --legend-tab-active: #d0d0d0;
+  --property-border: rgba(0,0,0,0.1);
+  --property-readonly-bg: #f5f5f5;
+  --property-readonly-text: #555;
+  --menu-bg: #ffffff;
+  --menu-hover: #f1f1f1;
+  --menu-text: rgba(0,0,0,0.5);
+  --menu-hover-text: rgba(0,0,0,0.9);
+  --save-bg: #43a047;
+  --delete-bg: #e53935;
+  --grid-line: rgba(0,0,0,0.08);
+  --ruler-bg: repeating-linear-gradient(to right, #000 0px, #000 2px, #fff 2px, #fff 4px);
+}
+  
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+}
+  
+button,
+input,
+select,
+textarea {
+    background-color: var(--input-bg);
+    color: var(--input-color);
+    font-family: var(--font-family);
+    border: none;
+}
+  
+select {
+    background-color: var(--input-bg);
+    color: var(--input-color);
+    border: 1px solid var(--panel-border);
+}
+  
+select:hover::after {
+    color: var(--select-arrow-hover);
+}
+  
+.scrollbar {
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+  
+.tooltip {
+    background: var(--tooltip-bg);
+    color: var(--tooltip-text);
+}
+  
+.context-menu {
+    background-color: var(--context-bg);
+    color: var(--input-color);
+}
+  
+.context-menu-item:hover {
+    background-color: var(--context-hover);
+    color: var(--context-text);
+}
+  
+.legend-panel {
+    background-color: var(--legend-bg);
+}
+  
+.legend-header {
+    background-color: var(--legend-header-bg);
+    color: var(--legend-header-text);
+}
+  
+.legend-content {
+    background-color: var(--legend-content-bg);
+}
+  
+.tab-btn.active {
+    background-color: var(--legend-tab-active);
+}
+  
+.property-title {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+}
+  
+.property-value input[readonly] {
+    background-color: var(--property-readonly-bg);
+    color: var(--property-readonly-text);
+}
+  
+.save-properties {
+    background-color: var(--save-bg);
+    color: white;
+}
+  
+.delete-element {
+    background-color: var(--delete-bg);
+    color: white;
+}
+  
+.measure-line {
+    stroke: red;
+}
+  
+.measure-label {
+    fill: red;
+    background-color: white;
+}
+  
+.scale-ruler {
+    background: var(--ruler-bg);
+    color: var(--text-color);
+}
+  
+.editor-container .toolbar button.active {
+    background: rgba(255,165,0,0.08);
+    color: white;
+}
+  
+.editor-container .toolbar button.active i {
+    color: white;
+}
+  

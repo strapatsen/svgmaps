@@ -383,4 +383,4 @@ class ProjectManager {
     clearRecentProjects() {
       this.recentProjects = [];
     }
-  }
+}

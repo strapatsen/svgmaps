@@ -47,7 +47,7 @@
 
 	--layer-item-hover-bg: #2a2a2a;
 	--layer-item-active-bg: #333;
-	--layer-name-active-color: orange;
+	--layer-name-active-color: rgba(255, 165, 0, 1);
 
 	--canvas-bg: #111111;
 	--canvas-border: rgba(255, 255, 255, 0.08);
@@ -103,7 +103,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "Roboto", "Segoe Ui", Tahoma, Verdana, sans-serif;
+	font-family: var(--font-family);
 	-khtml-user-select: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -121,7 +121,7 @@ body {
 	height: 100vh;
 	overflow: hidden;
 	font-size: 17px;
-	font-family: "Roboto", "Segoe UI", "Tahoma", "Arial", Sans-serif;
+	font-family: var(--font-family);
 }
 
 /* APP */
@@ -330,12 +330,12 @@ body {
 }
 .editor-container .menubar .checkbox.checked:after {
 	content: "✓";
-	color: #4a90e2;
+	color: var(--active-color);
 }
 .editor-container .menubar .radio.checked:after {
 	width: 8px;
 	height: 8px;
-	background-color: #4a90e2;
+	background-color: var(--active-color);
 	border-radius: 50%;
 	left: 12px;
 }
@@ -817,29 +817,7 @@ body {
 	left: 20px;
 	bottom: 42px;
 	height: 8px;
-	background: linear-gradient(
-		to right,
-		#000 0%,
-		#000 10%,
-		#fff 10%,
-		#fff 20%,
-		#000 20%,
-		#000 30%,
-		#fff 30%,
-		#fff 40%,
-		#000 40%,
-		#000 50%,
-		#fff 50%,
-		#fff 60%,
-		#000 60%,
-		#000 70%,
-		#fff 70%,
-		#fff 80%,
-		#000 80%,
-		#000 90%,
-		#fff 90%,
-		#fff 100%
-	);
+	background:var(--scale-ruler-bg);
 	color: white;
 	height: 4px;
 	text-shadow: 1px 1px 1px black;
@@ -1065,12 +1043,29 @@ body {
 	.editor-container .legend-panel.active ~ .canvas-container {
 	  width: calc(100% - 250px);
 	}
-  }
-  .editor-container .element-highlight {
-	animation: highlight 1.5s ease-out;
+}
+
+/* APP : Animations */
+.editor-container .element-highlight {
+	animation: highlight 1.5s ease-out;  
 }
   
 @keyframes highlight {
 	0% { stroke-opacity: 0.8; stroke-width: 8px; }
 	100% { stroke-opacity: 0; stroke-width: 2px; }
+}
+
+html.theme-fade *,
+html.theme-fade body,
+html.theme-fade .toolbar,
+html.theme-fade .panel,
+html.theme-fade .legend-panel,
+html.theme-fade .editor-container,
+html.theme-fade .theme-switcher,
+html.theme-fade canvas {
+	-webkit-transition:    background-color 0.3s ease,    color 0.3s ease,    border-color 0.3s ease,    fill 0.3s ease,    stroke 0.3s ease;
+	-moz-transition:    background-color 0.3s ease,    color 0.3s ease,    border-color 0.3s ease,    fill 0.3s ease,    stroke 0.3s ease;
+	-ms-transition:    background-color 0.3s ease,    color 0.3s ease,    border-color 0.3s ease,    fill 0.3s ease,    stroke 0.3s ease;
+	-o-transition:    background-color 0.3s ease,    color 0.3s ease,    border-color 0.3s ease,    fill 0.3s ease,    stroke 0.3s ease;
+	transition:    background-color 0.3s ease,    color 0.3s ease,    border-color 0.3s ease,    fill 0.3s ease,    stroke 0.3s ease;
 }

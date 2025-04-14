@@ -21,7 +21,7 @@
         <meta name="msapplication-TileColor" content="#000000">
         <meta name="msapplication-TileImage" content="/assets/img/icons/icon-144x144.png">
         <meta name="msapplication-config" content="/assets/browserconfig.xml">
-        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <link rel="apple-touch-icon" href="/assets/img/icons/icon-192x192.png">
         <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icons/icon-192x192.png">
@@ -29,28 +29,18 @@
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/icon-16x16.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/icon-32x32.png">
         <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/icons/icon-96x96.png">
-        <link rel="manifest" href="manifest.json">
+        <!-- <link rel="manifest" href="manifest.json"> -->
         
         <!-- CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
         <link rel="stylesheet" href="/assets/css/app.css">
-        <link rel="stylesheet" href="/assets/css/theme.css">
+        <link rel="stylesheet" href="/assets/css/theme-default.css">
 
         <!-- JS -->
-        <script src="assets/js/TerrainEditorApp.js"></script>
-        <script src="assets/js/ElementManager.js"></script>
-        <script src="assets/js/EventManager.js"></script>
-        <script src="assets/js/Layer.js"></script>
-        <script src="assets/js/LayerManager.js"></script>
-        <script src="assets/js/MenuSystem.js"></script>
-        <script src="assets/js/PluginManager.js"></script>
-        <script src="assets/js/ProjectManager.js"></script>
-        <script src="assets/js/TerrainElement.js"></script>
-        <script src="assets/js/ToolManager.js"></script>
-        <script src="assets/js/Tools.js"></script>
-        <script src="assets/js/ViewportManager.js"></script>
+        <script src="assets/js/app.js"></script>
+        
         
     </head>
     <body>
@@ -428,6 +418,7 @@
         
         </div>
         <script>
+            document.addEventListener('DOMContentLoaded', () => {
             const editor = new TerrainEditorApp({
                 canvasId: 'editor-canvas',
                 defaultTool: 'select',
@@ -463,11 +454,11 @@
             editor.init();
 
             // Load plugins
-            const pluginManager = new PluginManager(editor);
-            pluginManager.loadPlugins([
-                { name: 'Plugin1', path: 'path/to/plugin1.js' },
-                { name: 'Plugin2', path: 'path/to/plugin2.js' }
-            ]);
+            // const pluginManager = new PluginManager(editor);
+            // pluginManager.loadPlugins([
+            //     { name: 'Plugin1', path: 'path/to/plugin1.js' },
+            //     { name: 'Plugin2', path: 'path/to/plugin2.js' }
+            // ]);
 
             // Load the project
             // --
@@ -481,6 +472,8 @@
             //     { name: 'Layer 1', visible: true },
             //     { name: 'Layer 2', visible: false }
             // ]);
+
+        });
         </script>
     </body>
 </html>

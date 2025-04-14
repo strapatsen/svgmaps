@@ -34,4 +34,4 @@ class PluginManager {
     listPlugins() {
       return Array.from(this.plugins.keys());
     }
-  }
+}

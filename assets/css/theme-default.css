@@ -1,0 +1,148 @@
+:root {
+    --font-family: 'Roboto', sans-serif;
+    --bg-color: #131313;
+    --text-color: #e0e0e0;
+    --primary-color: #ffa500;
+    --primary-color-hover: #ffb733;
+    --secondary-color: #333;
+    --panel-bg: #1e1e1e;
+    --panel-border: rgba(255,255,255,0.08);
+    --highlight-color: #4caf50;
+    --danger-color: #f44336;
+    --tooltip-bg: rgba(0, 0, 0, 0.8);
+    --tooltip-text: #fff;
+    --input-bg: #2a2a2a;
+    --input-color: #fff;
+    --scrollbar-track: #191919;
+    --scrollbar-thumb: rgba(255,255,255,0.16);
+    --scrollbar-thumb-hover: rgba(255,255,255,0.25);
+    --select-arrow-color: rgba(255,255,255,0.16);
+    --select-arrow-hover: rgba(255,255,255,0.4);
+    --context-bg: #2a2a2a;
+    --context-hover: rgba(255,165,0,0.08);
+    --context-text: rgba(255,165,0,1);
+    --legend-bg: #222;
+    --legend-header-bg: #000;
+    --legend-header-text: rgba(255,165,0,1);
+    --legend-content-bg: rgba(255,255,255,0.012);
+    --legend-tab-bg: #1a1a1a;
+    --legend-tab-hover: #2a2a2a;
+    --legend-tab-active: #333;
+    --property-border: rgba(255,255,255,0.16);
+    --property-readonly-bg: #2a2a2a;
+    --property-readonly-text: #888;
+    --menu-bg: #232323;
+    --menu-hover: #131313;
+    --menu-text: rgba(255,255,255,0.4);
+    --menu-hover-text: rgba(255,255,255,0.9);
+    --save-bg: #4caf50;
+    --delete-bg: #f44336;
+    --grid-line: rgba(255,255,255,0.1);
+    --ruler-bg: linear-gradient(to right,#000 0%,#000 10%,#fff 10%,#fff 20%,#000 20%,#000 30%,#fff 30%,#fff 40%,#000 40%,#000 50%,#fff 50%,#fff 60%,#000 60%,#000 70%,#fff 70%,#fff 80%,#000 80%,#000 90%,#fff 90%,#fff 100%);
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+  }
+  
+  button,
+  input,
+  select,
+  textarea {
+    background-color: var(--input-bg);
+    color: var(--input-color);
+    font-family: var(--font-family);
+    border: none;
+  }
+  
+  select {
+    background-color: var(--input-bg);
+    color: var(--input-color);
+    border: 1px solid var(--panel-border);
+  }
+  
+  select:hover::after {
+    color: var(--select-arrow-hover);
+  }
+  
+  .scrollbar {
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
+  
+  .tooltip {
+    background: var(--tooltip-bg);
+    color: var(--tooltip-text);
+  }
+  
+  .context-menu {
+    background-color: var(--context-bg);
+    color: var(--input-color);
+  }
+  
+  .context-menu-item:hover {
+    background-color: var(--context-hover);
+    color: var(--context-text);
+  }
+  
+  .legend-panel {
+    background-color: var(--legend-bg);
+  }
+  
+  .legend-header {
+    background-color: var(--legend-header-bg);
+    color: var(--legend-header-text);
+  }
+  
+  .legend-content {
+    background-color: var(--legend-content-bg);
+  }
+  
+  .tab-btn.active {
+    background-color: var(--legend-tab-active);
+  }
+  
+  .property-title {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+  }
+  
+  .property-value input[readonly] {
+    background-color: var(--property-readonly-bg);
+    color: var(--property-readonly-text);
+  }
+  
+  .save-properties {
+    background-color: var(--save-bg);
+    color: white;
+  }
+  
+  .delete-element {
+    background-color: var(--delete-bg);
+    color: white;
+  }
+  
+  .measure-line {
+    stroke: red;
+  }
+  
+  .measure-label {
+    fill: red;
+    background-color: white;
+  }
+  
+  .scale-ruler {
+    background: var(--ruler-bg);
+    color: var(--text-color);
+  }
+  
+  .editor-container .toolbar button.active {
+    background: rgba(255,165,0,0.08);
+    color: white;
+  }
+  
+  .editor-container .toolbar button.active i {
+    color: white;
+  }
+  
