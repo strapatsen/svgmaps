@@ -1,11 +1,11 @@
 // app.js
-import { Editor } from './core/Editor.js';
-import { MenuSystem } from './ui/components/MenuSystem.js';
-import { ToolbarManager } from './ui/components/ToolbarManager.js';
-import { SideBar } from './ui/components/SideBar.js';
-import { initThemeSwitcher } from './ui/themes/ThemeSwitcher.js';
-import { registerDefaultPlugins } from './plugins/pluginRegistry.js';
-import Vendor from '../scripts/vendor.loader.js';
+import { Editor } from '../../../src/core/Editor.js';
+import { MenuSystem } from '../../../src/ui/components/MenuSystem.js';
+import { ToolbarManager } from '../../../src/ui/components/ToolbarManager.js';
+import { SideBar } from '../../../src/ui/components/SideBar.js';
+import { initThemeSwitcher } from '../../../src/ui/themes/ThemeSwitcher.js';
+import { registerDefaultPlugins } from '../../../src/plugins/pluginRegistry.js';
+import Vendor from '../../../scripts/vendor.loader.js';
 
 const loadModule = async (path) => {
     try {
