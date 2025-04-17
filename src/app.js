@@ -4,10 +4,33 @@ import { MenuSystem } from './ui/components/MenuSystem.js';
 import { ToolbarManager } from './ui/components/ToolbarManager.js';
 import { SideBar } from './ui/components/SideBar.js';
 import { initThemeSwitcher } from './ui/themes/ThemeSwitcher.js';
-import { PluginManager } from './plugins/PluginManager.js';
 import { registerDefaultPlugins } from './plugins/pluginRegistry.js';
 import Vendor from '../scripts/vendor.loader.js';
 
+const loadModule = async (path) => {
+    try {
+      return await import(path);
+    } catch (e) {
+      console.error(`Import failed for ${path}, trying alternatives...`, e);
+      // Probeer alternatieve paden
+      const alternatives = [
+        `./${path}`,
+        `/src/${path}`,
+        `../${path}`
+      ];
+      
+      for (const alt of alternatives) {
+        try {
+          return await import(alt);
+        } catch (err) {
+          continue;
+        }
+      }
+      throw e;
+    }
+  };
+  
+  const { PluginManager } = await loadModule('plugins/PluginManager');
 // ----------------------------- Configuration ----------------------------- //
 const APP_CONFIG = {
     // Application metadata
@@ -251,6 +274,7 @@ class SVGMapEditorApp {
         initThemeSwitcher(this.editor);
     }
 
+    
     async _loadPlugins() {
         this.splash.update('Loading plugins...', 60);
         
