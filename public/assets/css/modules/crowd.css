@@ -1,0 +1,37 @@
+.crowd-simulation {
+    --heatmap-opacity: 0.7;
+    --path-color: #4a90e2;
+    --density-high: #ff0000;
+    --density-medium: #ffcc00;
+    --density-low: #00ff00;
+}
+
+.crowd-heatmap {
+    position: absolute;
+    pointer-events: none;
+    opacity: var(--heatmap-opacity);
+    mix-blend-mode: multiply;
+}
+
+.crowd-path {
+    stroke: var(--path-color);
+    stroke-width: 2px;
+    stroke-dasharray: 5, 5;
+    fill: none;
+    animation: crowdPathAnimation 1s linear infinite;
+}
+
+@keyframes crowdPathAnimation {
+    from { stroke-dashoffset: 10; }
+    to { stroke-dashoffset: 0; }
+}
+
+.crowd-control-panel {
+    position: absolute;
+    right: 20px;
+    top: 100px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}

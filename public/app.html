@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" >
+    
+    <head>
+        <base href="/">
+        <meta charset="utf-8">
+        <title>SVG Maps</title>
+        <meta name="description" content="An advanced editor for creating and customizing 2d/3d Terrain maps with powerful tools and features.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Strapatsen">
+        <meta name="copyright" content="Strapatsen 2025">
+        <meta name="keywords" content="SVG, Maps, 2d, 3d, Terrain, Editor, Customization, Graphics, Design, Tools, Features, Web, Application, HTML5, JavaScript, CSS3">
+
+        <!-- Search Machines -->
+        <meta name="robots" content="no-index, no-follow, noarchive, nosnippet, noimageindex, noodp, noydir">
+        <meta name="googlebot" content="no-index, no-follow, noarchive, nosnippet, noimageindex, noodp, noydir">
+        <meta name="google" content="translate">
+        
+        <!-- Web Application -->
+        <meta name="application-name" content="SVG Maps">
+        <meta name="apple-mobile-web-app-title" content="SVG Maps">
+        <meta name="theme-color" content="#000000">
+        <meta name="msapplication-TileColor" content="#000000">
+        <meta name="msapplication-TileImage" content="../public/assets/img/icons/icon-144x144.png">
+        <meta name="msapplication-config" content="../public/assets/browserconfig.xml">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="apple-touch-icon" href="../public/assets/img/icons/icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="../public/assets/img/icons/icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="../public/assets/img/icons/icon-512x512.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../public/assets/img/icons/icon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../public/assets/img/icons/icon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="../public/assets/img/icons/icon-96x96.png">
+        <!-- <link rel="manifest" href="manifest.json"> -->
+        
+        <!-- CSS : Extern -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        
+        <!-- CSS : Local -->
+        <link rel="stylesheet" href="../public/assets/css/app.css">
+        <link rel="stylesheet" href="../public/assets/css/themes/theme-default.css">
+
+        <!-- JS : Extern -->
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.16.0/dist/tf.min.js"></script>
+        
+        <!-- JS : Local -->
+        
+        <script>window.ARjs = {version: 'latest',trackingBackend: 'artoolkit'};</script>
+        
+    </head>
+    <body>
+        <div class="editor-container">
+
+            <div class="menubar">
+                <svg class="menu-icon" width="20" height="20" viewBox="0 0 32 32" style="position:relative;top:6px;margin-right:16px;margin-left:2px;">
+                    <defs>
+                      <clipPath id="clip-path">
+                        <rect id="Rectangle_6" data-name="Rectangle 6" width="32" height="32" rx="2" fill="#fff" stroke="#707070" stroke-width="1"/>
+                      </clipPath>
+                    </defs>
+                    <g id="Mask_Group_5" data-name="Mask Group 5" clip-path="url(#clip-path)">
+                      <rect id="Rectangle_8" data-name="Rectangle 8" width="18" height="27" fill="#5a3720"/>
+                      <g id="Group_6" data-name="Group 6" transform="translate(0.194)">
+                        <path id="Grass" d="M0,0H32V32Z" transform="translate(-0.182)" fill="#375a20"/>
+                        <path id="Water" d="M.114,283.867l16.914-15.209,15.079,15.209Z" transform="translate(-0.296 -251.867)" fill="#20465a"/>
+                        <path id="Road1" d="M5.209,0l13.16,14.107-3.028,2.944L0,0Z" transform="translate(-0.182 32) rotate(-90)" fill="#fefe8a"/>
+                        <path id="Road" d="M5304.936-1962l26.882,26.439V-1930l-32.012-32Z" transform="translate(-5300 1962)" fill="#fefe8a"/>
+                        <path id="tent" d="M6.228.126a.8.8,0,0,1,.86,0l5.178,3.361a.665.665,0,0,1,.305.473l.74,6.051a.635.635,0,0,1-.185.523.773.773,0,0,1-.55.225H9.617l-2.529,0-.43-4.706v4.706H.74a.769.769,0,0,1-.55-.225.64.64,0,0,1-.185-.523l.74-6.051a.665.665,0,0,1,.305-.473Z" transform="translate(15.852 3.106)" fill="#b48527"/>
+                        <path id="land" d="M-60.99-55.466l9.607,9.954H-71.9Z" transform="translate(77.727 77.512)" fill="#495a20"/>
+                      </g>
+                    </g>
+                  </svg>
+                  
+        
+                <!-- File menu -->
+                <div class="menu">
+                    <button class="menu-title">File</button>
+                    <div class="menu-items">
+                        <div class="menu-item" data-action="project:new" data-shortcut="Ctrl+N">
+                            <i class="fas fa-file"></i> New
+                            <span class="shortcut">Ctrl+N</span>
+                        </div>
+                        <div class="menu-item" data-action="project:save" data-shortcut="Ctrl+S">
+                            <i class="fas fa-save"></i> Save
+                            <span class="shortcut">Ctrl+S</span>
+                        </div>
+                        <div class="menu-item" data-action="project:load" data-shortcut="Ctrl+O">
+                            <i class="fas fa-folder-open"></i> Open
+                            <span class="shortcut">Ctrl+O</span>
+                        </div>
+                        <div class="menu-divider"></div>
+                        <div class="menu-item" data-action="project:export" data-shortcut="Ctrl+E">
+                            <i class="fas fa-file-export"></i> Export
+                            <i class="submenu-icon fas fa-chevron-right"></i>
+                            <div class="submenu">
+                                <div class="menu-item" data-action="project:export:png" data-shortcut="Ctrl+E+P">
+                                    <i class="fas fa-file-image"></i> PNG
+                                    <span class="shortcut">Ctrl+E+P</span>
+                                </div>
+                                <div class="menu-item" data-action="project:export:svg" data-shortcut="Ctrl+E+S">
+                                    <i class="fas fa-file-code"></i> SVG
+                                    <span class="shortcut">Ctrl+E+S</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item" data-action="project:print" data-shortcut="Ctrl+P">
+                            <i class="fas fa-print"></i> Print
+                            <span class="shortcut">Ctrl+P</span>
+                        </div>
+                        <div class="menu-divider"></div>
+                        <div class="menu-item" data-action="project:quit" data-shortcut="Ctrl+Q">
+                            <i class="fas fa-file"></i> Quit
+                            <span class="shortcut">Ctrl+Q</span>
+                        </div>
+                        <div class="menu-divider"></div>
+                        
+                    </div>
+                </div>
+        
+                <!-- Edit menu -->
+                <div class="menu">
+                    <button class="menu-title">Edit</button>
+                    <div class="menu-items">
+                        <div class="menu-item" data-action="edit:undo" data-shortcut="Ctrl+Z">
+                            <i class="fas fa-undo"></i> Undo
+                            <span class="shortcut">Ctrl+Z</span>
+                        </div>
+                        <div class="menu-item" data-action="edit:redo" data-shortcut="Ctrl+Y">
+                            <i class="fas fa-redo"></i> Redo
+                            <span class="shortcut">Ctrl+Y</span>
+                        </div>
+                        <div class="menu-divider"></div>
+                        <div class="menu-item" data-action="edit:toggle-grid">
+                            <i class="fas fa-th"></i> Show Grid
+                        </div>
+                        <div class="menu-item" data-action="edit:toggle-ruler">
+                            <i class="fas fa-ruler"></i> Ruler
+                        </div>
+                    </div>
+                </div>
+
+                <!-- View menu -->
+                <div class="menu">
+                    <button class="menu-title">View</button>
+                    <div class="menu-items">
+                        <div class="menu-item" data-action="view:fullscreen" data-shortcut="F11">
+                            <i class="fas fa-expand"></i> Fullscreen
+                            <span class="shortcut">F11</span>
+                        </div>
+                        <div class="menu-item" data-action="view:zoom-in" data-shortcut="Ctrl+Z">
+                            <i class="fas fa-search-plus"></i> Zoom In
+                            <span class="shortcut">Ctrl+Z</span>
+                        </div>
+                        <div class="menu-item" data-action="view:zoom-out" data-shortcut="Ctrl+Shift+Z">
+                            <i class="fas fa-search-minus"></i> Zoom Out
+                            <span class="shortcut">Ctrl+Shift+Z</span>
+                        </div>
+                        <div class="menu-item" data-action="view:reset-zoom" data-shortcut="Ctrl+0">
+                            <i class="fas fa-eye"></i> Reset Zoom
+                            <span class="shortcut">Ctrl+0</span>
+                        </div>
+                        <div class="menu-item" data-action="view:fit-to-screen" data-shortcut="Ctrl+Shift+0">
+                            <i class="fas fa-expand"></i> Fit to Screen
+                            <span class="shortcut">Ctrl+Shift+0</span>
+                        </div>
+                        <div class="menu-divider"></div>
+                        <div class="menu-item" data-action="view:toggle-ruler" data-shortcut="Ctrl+R">
+                            <i class="fas fa-ruler"></i> Toggle Ruler
+                            <span class="shortcut">Ctrl+R</span>
+                        </div>
+                        <div class="menu-item" data-action="view:toggle-grid" data-shortcut="Ctrl+G">
+                            <i class="fas fa-th"></i> Toggle Grid
+                            <span class="shortcut">Ctrl+G</span>
+                        </div>
+                        <div class="menu-item" data-action="view:toggle-measure" data-shortcut="Ctrl+M">
+                            <i class="fas fa-ruler"></i> Toggle Measure
+                            <span class="shortcut">Ctrl+M</span>
+                        </div>
+                        <div class="menu-divider"></div>
+                        <div class="menu-item" data-action="view:preferences" data-shortcut="Ctrl+,">
+                            <i class="fas fa-cog"></i> Preferences
+                            <span class="shortcut">Ctrl+,</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools menu -->
+                <div class="menu">
+                    <button class="menu-title">Tools</button>
+                    <div class="menu-items">
+                        <div class="menu-item" data-action="tools:gallery" data-shortcut="Ctrl+Q">
+                            <i class="fas fa-file"></i> Gallery
+                            <span class="shortcut">Ctrl+Q</span>
+                        </div>
+                        <div class="menu-item" data-action="tools:select" data-shortcut="V">
+                            <i class="fas fa-mouse-pointer"></i> Select Tool
+                            <span class="shortcut">V</span>
+                        </div>
+                        <div class="menu-item" data-action="tools:pen" data-shortcut="P">
+                            <i class="fas fa-pencil-alt"></i> Pen Tool
+                            <span class="shortcut">P</span>
+                        </div>
+                        <div class="menu-divider"></div>
+                        <div class="menu-item" data-action="tools:rectangle" data-shortcut="R">
+                            <i class="fas fa-square"></i> Rectangle
+                            <span class="shortcut">R</span>
+                        </div>
+                        <div class="menu-item" data-action="tools:circle" data-shortcut="C">
+                            <i class="fas fa-circle"></i> Circle
+                            <span class="shortcut">C</span>
+                        </div>
+                        <div class="menu-item" data-action="tools:polygon" data-shortcut="G">
+                            <i class="fas fa-draw-polygon"></i> Polygon
+                            <span class="shortcut">G</span>
+                        </div>
+                        <div class="menu-item" data-action="tools:text" data-shortcut="T">
+                            <i class="fas fa-font"></i> Text Tool
+                            <span class="shortcut">T</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Help menu -->
+                <div class="menu">
+                    <button class="menu-title">Help</button>
+                    <div class="menu-items">
+                        <div class="menu-item" data-action="help:help" data-shortcut="F1">
+                            <i class="fas fa-question-circle"></i> Help
+                            <span class="shortcut">F1</span>
+                        </div>
+                        <div class="menu-item" data-action="help:support">
+                            <i class="fas fa-comment-dots"></i> Support
+                        </div>
+                        <div class="menu-item" data-action="help:report-bug">
+                            <i class="fas fa-bug"></i> Report Bug
+                        </div>
+                        <div class="menu-item" data-action="help:website">
+                            <i class="fas fa-earth"></i> Website
+                        </div>
+                        <div class="menu-divider"></div>
+                        <div class="menu-item" data-action="help:about">
+                            <i class="fas fa-info-circle"></i> About
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="toolbar">
+                <div class="tool-section">
+                    <button id="undo" title="Undo"><i class="fas fa-undo"></i></button>
+                    <button id="redo" title="Redo"><i class="fas fa-redo"></i></button>
+                </div>
+                <div class="tool-section">
+                    <button id="new-project" title="New map"><i class="fa-solid fa-file"></i></button>
+                    <button id="save-project" title="Save map"><i class="fas fa-save"></i></button>
+                    <button id="load-project" title="Load map"><i class="fas fa-folder-open"></i></button>
+                </div>
+                <div class="tool-section">
+                    <button id="print" title="Print"><i class="fas fa-print"></i></button>
+                    <button id="export-png" title="Export as PNG"><i class="fas fa-file-image"></i></button>
+                    <button id="export-svg" title="Export as SVG"><i class="fa-solid fa-file-code"></i></button>
+                    <button id="share-link" title="Share (private link)"><i class="fa-solid fa-share"></i></button>
+                </div>
+                <div class="tool-section">
+                    <button id="zoom-in" title="Zoom in"><i class="fas fa-search-plus"></i></button>
+                    <button id="zoom-out" title="Zoom out"><i class="fas fa-search-minus"></i></button>
+                    <button id="zoom-reset" title="Reset zoom"><i class="fa-solid fa-eye"></i></button>
+                    <button id="zoom-fit" title="Fit to screen"><i class="fas fa-expand"></i></button>
+                </div>
+                <div class="tool-section">
+                    <button id="toggle-grid" title="Toggle grid"><i class="fas fa-th"></i></button>
+                    <button id="measure-toggle" title="Measure distance"><i class="fas fa-ruler"></i></button>
+                </div>
+                <div class="tool-section">
+                    <button class="tool-btn active" data-tool="select" title="Select"><i class="fas fa-mouse-pointer"></i></button>
+        
+                    <button id="add-library-item" title="Add Item from Library"><i class="fa-solid fa-box-archive"></i></button>
+                    <button class="tool-btn" id="lock-item" title="Lock/unlock item"><i class="fa-solid fa-unlock"></i></button>
+        
+                    <button class="tool-btn" data-tool="line" title="Line"><i class="fas fa-slash"></i></button>
+                    <button class="tool-btn" data-tool="rect" title="Rectangle"><i class="fas fa-square"></i></button>
+                    <button class="tool-btn" data-tool="circle" title="Circle"><i class="fas fa-circle"></i></button>
+                    <button class="tool-btn" data-tool="polygon" title="Polygon"><i class="fas fa-draw-polygon"></i></button>
+                    <button class="tool-btn" data-tool="text" title="Text"><i class="fas fa-font"></i></button>
+                </div>
+            </div>
+        
+            <div class="editor-area">
+        
+                <div class="canvas-container" id="canvas-container">
+                    <svg id="main-canvas"></svg>
+                    <canvas id="temp-canvas"></canvas>
+                </div>
+                <!-- width="1883.42" height="1003.49" -->
+                <div class="legend-panel  active" id="legend-panel">
+        
+                    <div class="legend-header">
+                        <button id="close-legend" class="close-legend-btn" title="Minimize Sidebar"><i class="fa-solid fa-angles-right"></i></button>
+                        <h3>Sidebar</h3>
+                    </div>
+        
+                    <div class="legend-tabs">
+                        <button class="tab-btn active" data-tab="properties">Properties</button>
+                        <button class="tab-btn" data-tab="layers">Layers</button>
+                        <button class="tab-btn" data-tab="library">Library</button>
+                        <button class="tab-btn" data-tab="plugins">Plugins</button>
+                        <button class="tab-btn" data-tab="project">Project</button>
+                    </div>
+        
+                    <div class="legend-content">
+                        <div id="properties-tab" class="tab-content active">
+                            <div id="element-properties">
+                                <div class="property-grid">
+                                    <p class="placeholder">Select an element to edit properties...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="layers-tab" class="tab-content">
+                            <div class="layer-controls">
+                                <button id="add-layer-btn" class="small-btn" title="Add layer"><i class="fas fa-plus"></i></button>
+                                <button id="remove-layer-btn" class="small-btn" title="Remove layer"><i class="fas fa-trash"></i></button>
+                                <button id="move-layer-up" class="small-btn" title="Move layer up"><i class="fas fa-arrow-up"></i></button>
+                                <button id="move-layer-down" class="small-btn" title="Move layer down"><i class="fas fa-arrow-down"></i></button>
+                            </div>
+                            <ul id="layer-visibility" class="layer-list"></ul>
+                        </div>
+                        <div id="library-tab" class="tab-content"></div>
+                        <div id="plugins-tab" class="tab-content">
+                            <div id="plugin-container"></div>
+                          </div>
+                        <div id="project-tab" class="tab-content">
+                            <div class="property-title">
+                                <i class="fa-solid fa-image"></i> Main
+                            </div>
+                            <div class="property-grid">
+                                <div class="property-row">
+                                    <div class="property-name">Project Name</div>
+                                    <div class="property-value">
+                                        <label for="project-name" class="visually-hidden">Project Name</label>
+                                        <input type="text" id="project-name" value="Untitled" placeholder="Enter project name">
+                                    </div>
+                                </div>
+                                <div class="property-row">
+                                    <div class="property-name">Description</div>
+                                    <div class="property-value">
+                                        <label for="project-description" class="visually-hidden">Project Description</label>
+                                        <textarea id="project-description" placeholder="Enter project description"></textarea>
+                                    </div>
+                                </div>
+                                <div class="property-row">
+                                    <div class="property-name">Version</div>
+                                    <div class="property-value">
+                                        <input type="text" id="project-version" value="1.0" title="Project Version" placeholder="Enter project version">
+                                    </div>
+                                </div>
+                                <div class="property-row">
+                                    <div class="property-name">Author</div>
+                                    <div class="property-value">
+                                        <label for="project-author" class="visually-hidden">Author</label>
+                                        <input type="text" id="project-author" placeholder="Enter author name">
+                                    </div>
+                                </div>
+                                <div class="property-row">
+                                    <div class="property-name">Created</div>
+                                    <div class="property-value"><input type="text" id="project-created" readonly title="Project Created Date" placeholder="Created Date"></div>
+                                </div>
+                                <div class="property-row">
+                                    <div class="property-name">Modified</div>
+                                    <div class="property-value"><input type="text" id="project-modified" readonly title="Project Modified Date" placeholder="Modified Date"></div>
+                                </div>
+                            </div>
+                            <div class="property-title">
+                                <i class="fa-solid fa-tarp"></i> Map
+                            </div>
+                            <div class="property-grid">
+                                <div class="property-row">
+                                    <div class="property-name">Base Map</div>
+                                    <div class="property-value">
+                                        <div class="base-map-controls-wrapper">
+                                            <div class="base-map-controls flex-one">
+                                            <div class="select-wrapper">
+                                                <label for="base-map-select" class="visually-hidden">Base Map</label>
+                                                <select id="base-map-select">
+                                                    <option value="blank">Empty</option>
+                                                </select>
+                                            </div>
+                                            <input type="file" id="custom-map-input" accept=".svg" class="hidden-input" title="Upload a custom map file" placeholder="Choose a file">
+                                        </div>
+                                            <button id="load-custom-map" title="Upload svg file"><i class="fa-solid fa-folder-open"></i></button>
+                                            <button id="edit-base-map" title="Upload svg code"><i class="fa-solid fa-code"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="property-row">
+                                    <div class="property-name">Map width</div>
+                                    <div class="property-value">
+                                        <div class="number-input">
+                                            <input type="number" id="project-width" value="1883.42" step="1" title="Enter map width in pixels" placeholder="Map width">PX
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="property-row">
+                                    <div class="property-name">Map height</div>
+                                    <div class="property-value">
+                                        <div class="number-input">
+                                            <input type="number" id="project-height" value="1003.49" step="1" title="Enter map height in pixels" placeholder="Map height"> PX
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="property-title">
+                                <i class="fa-solid fa-ruler-combined"></i> Scale
+                            </div>
+                            <div class="property-grid">
+                                <div class="property-row">
+                                    <div class="property-name">On map</div>
+                                    <div class="property-value">
+                                        <div class="number-input">
+                                            <input type="number" id="scale-px" value="111" min="1" step="1" title="Enter scale in pixels" placeholder="Scale in pixels"> pixels
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="property-row">
+                                    <div class="property-name">In reality</div>
+                                    <div class="property-value">
+                                        <div class="number-input">
+                                            <input type="number" id="scale-meters" value="10" min="0.1" step="0.1" title="Enter scale in meters" placeholder="Scale in meters"> Meters
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+        
+            </div>
+
+            <div id="context-menu" class="context-menu"></div>
+
+            <div id="error-dialog" class="modal" style="display:none;">
+                <div class="modal-content">
+                  <h3>Error</h3>
+                  <p class="error-message"></p>
+                  <pre class="error-stack"></pre>
+                  <button class="close-button">Close</button>
+                </div>
+            </div>
+
+            <input type="file" id="file-input" accept=".wmap" style="display:none;" title="Upload a map file" placeholder="Choose a map file">
+        
+        </div>
+        <script type="module">
+            import { SVGMapEditorApp } from './src/app.js';
+            
+            document.addEventListener('DOMContentLoaded', async () => {
+                try {
+                    const app = new SVGMapEditorApp(window.APP_CONFIG || {});
+                    await app.initialize();
+                } catch (error) {
+                    console.error('Failed to initialize app:', error);
+                    // Toon foutmelding aan gebruiker
+                }
+            });
+        </script>
+        <script type="module" src="./src/app.js" defer></script>
+    </body>
+</html>

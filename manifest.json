@@ -4,7 +4,7 @@
     "description": "An advanced editor for creating and customizing SVG-based terrain maps with powerful tools and features.",
     "author": "Strapatsen",
     "license": "MIT",
-    "main": "index.html",
+    "main": "./public/app.html",
     "scripts": {},
     "dependencies": {},
     "devDependencies": {},
